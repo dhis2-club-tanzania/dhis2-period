@@ -349,3 +349,13 @@ describe('Given I set a relative ten years period', () => {
     expect(periodObject.iso.length).toEqual(10);
   });
 });
+
+
+describe('Given a period with allow future period set', () => {
+  let period = new Period().setPreferences({ allowFuturePeriods: true });
+  const periodObject: PeriodInterface = period.getById(new Date().getFullYear().toString());
+
+  it('should return last period', () => {
+    expect(periodObject.lastPeriod).toBeDefined();
+  });
+});
