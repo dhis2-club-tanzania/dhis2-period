@@ -23,7 +23,7 @@ export class PeriodInstance {
     calendarId: string,
     type: string,
     preferences: any,
-    year: number,
+    year: number
   ) {
     this._type = type;
     this._preferences = preferences;
@@ -49,6 +49,10 @@ export class PeriodInstance {
   get() {
     this._periods = this.getPeriods(this._type, this._year);
 
+    //! Omit weekly future period
+    if (this._type === 'Weekly') {
+      return this._periods;
+    }
     if (
       (this._preferences && this._preferences.allowFuturePeriods) ||
       this._type.indexOf('Relative') !== -1
@@ -58,7 +62,7 @@ export class PeriodInstance {
 
     return this.omitFuturePeriods(
       this.includeLastPeriods(this._periods, this._type, this._year),
-      this._type,
+      this._type
     ).reverse();
   }
 
@@ -74,6 +78,10 @@ export class PeriodInstance {
     let periods;
 
     switch (type) {
+      case 'Weekly': {
+        periods = this.weeksInYear(year);
+        break;
+      }
       case 'Monthly': {
         periods = this.getMonthlyPeriods(year, offset);
         break;
@@ -144,7 +152,6 @@ export class PeriodInstance {
         periods = [];
         break;
     }
-
     return periods;
   }
 
@@ -173,18 +180,18 @@ export class PeriodInstance {
         const biMonthlyPeriods = this.includeLastPeriods(
           this.getBiMonthlyPeriods(this._year),
           PeriodTypeEnum.BI_MONTHLY,
-          this._year,
+          this._year
         );
 
         const lastBiMonthlyPeriods = this.includeLastPeriods(
           this.getBiMonthlyPeriods(this._year - 1),
           PeriodTypeEnum.BI_MONTHLY,
-          this._year - 1,
+          this._year - 1
         );
 
         const currentBiMonthlyPeriod: PeriodInterface = find(
           biMonthlyPeriods || [],
-          ['id', this.getBiMonthlyPeriodId(this._year, this._biMonth)],
+          ['id', this.getBiMonthlyPeriodId(this._year, this._biMonth)]
         );
         return [
           {
@@ -208,7 +215,7 @@ export class PeriodInstance {
             iso: getLastNthPeriods(
               [...lastBiMonthlyPeriods, ...biMonthlyPeriods],
               currentBiMonthlyPeriod,
-              6,
+              6
             ),
           },
         ];
@@ -218,24 +225,24 @@ export class PeriodInstance {
         const monthlyPeriods = this.includeLastPeriods(
           this.getMonthlyPeriods(this._year),
           PeriodTypeEnum.MONTHLY,
-          this._year,
+          this._year
         );
 
         const lastMonthlyPeriods = this.includeLastPeriods(
           this.getMonthlyPeriods(this._year - 1),
           PeriodTypeEnum.MONTHLY,
-          this._year - 1,
+          this._year - 1
         );
 
         const lastLastMonthlyPeriods = this.includeLastPeriods(
           this.getMonthlyPeriods(this._year - 2),
           PeriodTypeEnum.MONTHLY,
-          this._year - 2,
+          this._year - 2
         );
 
         const currentMonthlyPeriod: PeriodInterface = find(
           monthlyPeriods || [],
-          ['id', this.getMonthPeriodId(this._year, this._month)],
+          ['id', this.getMonthPeriodId(this._year, this._month)]
         );
 
         return [
@@ -258,7 +265,7 @@ export class PeriodInstance {
             iso: getLastNthPeriods(
               [...lastMonthlyPeriods, ...monthlyPeriods],
               currentMonthlyPeriod,
-              3,
+              3
             ),
           },
           {
@@ -268,7 +275,7 @@ export class PeriodInstance {
             iso: getLastNthPeriods(
               [...lastMonthlyPeriods, ...monthlyPeriods],
               currentMonthlyPeriod,
-              6,
+              6
             ),
           },
           {
@@ -282,7 +289,7 @@ export class PeriodInstance {
                 ...monthlyPeriods,
               ],
               currentMonthlyPeriod,
-              12,
+              12
             ),
           },
         ];
@@ -292,13 +299,13 @@ export class PeriodInstance {
         const quarterPeriods = this.includeLastPeriods(
           this.getQuarterlyPeriods(this._year),
           PeriodTypeEnum.QUARTERLY,
-          this._year,
+          this._year
         );
 
         const lastYearQuarterPeriods = this.includeLastPeriods(
           this.getQuarterlyPeriods(this._year - 1),
           PeriodTypeEnum.QUARTERLY,
-          this._year - 1,
+          this._year - 1
         );
 
         const currentQuarter: PeriodInterface = find(quarterPeriods || [], [
@@ -326,7 +333,7 @@ export class PeriodInstance {
             iso: getLastNthPeriods(
               [...lastYearQuarterPeriods, ...quarterPeriods],
               currentQuarter,
-              4,
+              4
             ),
           },
         ];
@@ -336,18 +343,18 @@ export class PeriodInstance {
         const sixMonthlyPeriods = this.includeLastPeriods(
           this.getSixMonthlyPeriods(this._year),
           PeriodTypeEnum.SIX_MONTHLY,
-          this._year,
+          this._year
         );
 
         const lastSixMonthlyPeriods = this.includeLastPeriods(
           this.getSixMonthlyPeriods(this._year - 1),
           PeriodTypeEnum.SIX_MONTHLY,
-          this._year - 1,
+          this._year - 1
         );
 
         const currentSixMonthly: PeriodInterface = find(
           sixMonthlyPeriods || [],
-          ['id', this.getSixMonthlyPeriodId(this._year, this._sixMonth)],
+          ['id', this.getSixMonthlyPeriodId(this._year, this._sixMonth)]
         );
         return [
           {
@@ -369,7 +376,7 @@ export class PeriodInstance {
             iso: getLastNthPeriods(
               [...lastSixMonthlyPeriods, ...sixMonthlyPeriods],
               currentSixMonthly,
-              2,
+              2
             ),
           },
         ];
@@ -379,7 +386,7 @@ export class PeriodInstance {
         const yearPeriods = this.includeLastPeriods(
           this.getYearlyPeriods(this._year, PeriodTypeEnum.YEARLY, '', -1, 20),
           PeriodTypeEnum.YEARLY,
-          this._year,
+          this._year
         );
 
         const currentYear: PeriodInterface = find(yearPeriods || [], [
@@ -458,7 +465,7 @@ export class PeriodInstance {
           endDate: this.getDate(
             monthYear,
             monthIndex + 1,
-            this._calendar.getDaysInMonth(monthYear, monthIndex + 1),
+            this._calendar.getDaysInMonth(monthYear, monthIndex + 1)
           ),
           type: 'Monthly',
           name: `${monthName} ${monthYear}`,
@@ -466,19 +473,112 @@ export class PeriodInstance {
             id,
             'Monthly',
             'Daily',
-            this._preferences,
+            this._preferences
           ),
           weekly: this.getChildrenPeriods(
             id,
             'Monthly',
             'Weekly',
-            this._preferences,
+            this._preferences
           ),
         };
-      },
+      }
     );
 
     return this.getMonthsByOffset(monthPeriods, offset);
+  }
+
+  weeksInYear(year: number) {
+    const d = new Date(year, 11, 31);
+    const week = this.getWeekNumber(d)[1];
+    const currentYear = new Date().getFullYear();
+    const todayWeekNo = this.getWeekNumber(new Date())[1];
+    const totalWeeks = week == 1 ? 52 : week;
+    const lastyear = year - 1;
+    const lastYeard = new Date(lastyear, 11, 31);
+    let lastYearWeeks = this.getWeekNumber(lastYeard)[1];
+    lastYearWeeks = lastYearWeeks == 1 ? 52 : lastYearWeeks;
+    let periods = [];
+    // list up-to-date weeks
+    if (currentYear === year) {
+      for (let week = 1; week <= todayWeekNo; week++) {
+        const periodItem = this.getDateOfWeek(week, year);
+        if (lastYearWeeks === 53) {
+          periods.push({
+            ...periodItem,
+            id: `${year}W${week - 1}`,
+            week: week - 1,
+            name: `Week ${week - 1} ${periodItem.startDate} - ${
+              periodItem.endDate
+            }`,
+            startDate: periodItem.startDate,
+            endDate: periodItem.endDate,
+          });
+        } else {
+          periods.push(periodItem);
+        }
+      }
+    }
+    // list all completed weeks
+    if (currentYear !== year) {
+      for (let week = 1; week <= totalWeeks; week++) {
+        const periodItem = this.getDateOfWeek(week, year);
+        if (lastYearWeeks === 53) {
+          periods.push({
+            ...periodItem,
+            id: `${year}W${week - 1}`,
+            week: week - 1,
+            name: `Week ${week - 1} ${periodItem.startDate} - ${
+              periodItem.endDate
+            }`,
+            startDate: periodItem.startDate,
+            endDate: periodItem.endDate,
+          });
+        } else {
+          periods.push(periodItem);
+        }
+      }
+    }
+
+    return periods.filter((item) => item.week).sort((a, b) => b.week - a.week);
+  }
+
+  getWeekNumber(d: any) {
+    d = new Date(+d);
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() + 4 - (d.getDay() || 7));
+    const yearStart: any = new Date(d.getFullYear(), 0, 1);
+    var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+    return [d.getFullYear(), weekNo];
+  }
+
+  getDateOfWeek(weekNo: number, year: number) {
+    let startDate = new Date(year, 0, 1 + (weekNo - 1) * 7);
+    startDate.setDate(startDate.getDate() + (1 - startDate.getDay()));
+    let endDate = new Date(startDate);
+    endDate.setDate(endDate.getDate() + 6); // plus more 6 days
+    return {
+      id: `${year}W${weekNo}`,
+      week: weekNo,
+      name: `Week ${weekNo} ${this.sanitizeDateString(
+        startDate
+      )} - ${this.sanitizeDateString(endDate)}`,
+      startDate: this.sanitizeDateString(startDate),
+      endDate: this.sanitizeDateString(endDate),
+    };
+  }
+
+  sanitizeDateString(dateString: any) {
+    const currentDateValue = new Date(dateString);
+    const day = currentDateValue.getDate();
+    const month = currentDateValue.getMonth() + 1;
+    const formattedDate =
+      currentDateValue.getFullYear() +
+      '-' +
+      ((month < 10 ? '0' : '') + month) +
+      '-' +
+      ((day < 10 ? '0' : '') + day);
+    return formattedDate;
   }
 
   getQuarterlyPeriods(year: number) {
@@ -487,11 +587,11 @@ export class PeriodInstance {
         this.getMonthWithYears(
           this._monthNames,
           year,
-          this._quarterMonthOffset,
+          this._quarterMonthOffset
         ),
-        this._quarterMonthOffset,
+        this._quarterMonthOffset
       ),
-      3,
+      3
     ).map((quarterMonths, quarterIndex) => {
       const id = this.getQuarterPeriodId(year, quarterIndex + 1);
       const startMonth = head(quarterMonths || []);
@@ -503,7 +603,7 @@ export class PeriodInstance {
         endDate: this.getDate(
           year,
           endMonth.index + 1,
-          this._calendar.getDaysInMonth(year, endMonth.index + 1),
+          this._calendar.getDaysInMonth(year, endMonth.index + 1)
         ),
         type: 'Quarterly',
         name: this.getPeriodNameByRange(startMonth, endMonth, year),
@@ -511,19 +611,19 @@ export class PeriodInstance {
           id,
           'Quarterly',
           'Daily',
-          this._preferences,
+          this._preferences
         ),
         weekly: this.getChildrenPeriods(
           id,
           'Quarterly',
           'Weekly',
-          this._preferences,
+          this._preferences
         ),
         monthly: this.getChildrenPeriods(
           id,
           'Quarterly',
           'Monthly',
-          this._preferences,
+          this._preferences
         ),
       };
     });
@@ -531,7 +631,7 @@ export class PeriodInstance {
 
   getPeriodNameByRange(startMonth: any, endMonth: any, year: number) {
     return `${[startMonth.name + ` ${startMonth.year}`, endMonth.name].join(
-      ' - ',
+      ' - '
     )} ${endMonth.year}`;
   }
 
@@ -563,28 +663,28 @@ export class PeriodInstance {
           id,
           type: 'BiMonthly',
           name: `${[head(biMonths || []), last(biMonths || [])].join(
-            ' - ',
+            ' - '
           )} ${year}`,
           daily: this.getChildrenPeriods(
             id,
             'BiMonthly',
             'Daily',
-            this._preferences,
+            this._preferences
           ),
           weekly: this.getChildrenPeriods(
             id,
             'BiMonthly',
             'Weekly',
-            this._preferences,
+            this._preferences
           ),
           monthly: this.getChildrenPeriods(
             id,
             'BiMonthly',
             'Monthly',
-            this._preferences,
+            this._preferences
           ),
         };
-      },
+      }
     );
   }
 
@@ -599,32 +699,32 @@ export class PeriodInstance {
           endDate: this.getDate(
             year,
             sixMonthIndex + 6,
-            this._calendar.getDaysInMonth(year, sixMonthIndex + 6),
+            this._calendar.getDaysInMonth(year, sixMonthIndex + 6)
           ),
           type: 'SixMonthly',
           name: `${[head(sixMonths || []), last(sixMonths || [])].join(
-            ' - ',
+            ' - '
           )} ${year}`,
           daily: this.getChildrenPeriods(
             id,
             'SixMonthly',
             'Daily',
-            this._preferences,
+            this._preferences
           ),
           weekly: this.getChildrenPeriods(
             id,
             'SixMonthly',
             'Weekly',
-            this._preferences,
+            this._preferences
           ),
           monthly: this.getChildrenPeriods(
             id,
             'SixMonthly',
             'Monthly',
-            this._preferences,
+            this._preferences
           ),
         };
-      },
+      }
     );
   }
 
@@ -637,7 +737,7 @@ export class PeriodInstance {
       const id = this.getSixMonthlyPeriodId(
         year,
         sixMonthAprilIndex + 1,
-        'April',
+        'April'
       );
 
       const month = (sixMonthAprilIndex + 1) * 6 - 2;
@@ -650,31 +750,31 @@ export class PeriodInstance {
         endDate: this.getDate(
           nextEndMonth > 12 ? year + 1 : year,
           endMonth,
-          this._calendar.getDaysInMonth(year, endMonth),
+          this._calendar.getDaysInMonth(year, endMonth)
         ),
         type: 'SixMonthlyApril',
         name: this.getPeriodNameByRange(
           head(sixMonthApril || []),
           last(sixMonthApril || []),
-          year,
+          year
         ),
         daily: this.getChildrenPeriods(
           id,
           'SixMonthlyApril',
           'Daily',
-          this._preferences,
+          this._preferences
         ),
         weekly: this.getChildrenPeriods(
           id,
           'SixMonthlyApril',
           'Weekly',
-          this._preferences,
+          this._preferences
         ),
         monthly: this.getChildrenPeriods(
           id,
           'SixMonthlyApril',
           'Monthly',
-          this._preferences,
+          this._preferences
         ),
       };
     });
@@ -685,16 +785,16 @@ export class PeriodInstance {
       sortBy(
         this.getMonthsByOffset(
           this.getMonthWithYears(this._monthNames, year + 1, -2),
-          this._quarterMonthOffset,
+          this._quarterMonthOffset
         ),
-        ['year', 'index'],
+        ['year', 'index']
       ),
-      6,
+      6
     ).map((sixMonthNovember, sixMonthNovemberIndex) => {
       const id = this.getSixMonthlyPeriodId(
         year,
         sixMonthNovemberIndex + 1,
-        'Nov',
+        'Nov'
       );
 
       const startMonth = (sixMonthNovemberIndex + 1) * 6 + 5;
@@ -708,31 +808,31 @@ export class PeriodInstance {
         endDate: this.getDate(
           year + 1,
           endMonth,
-          this._calendar.getDaysInMonth(year, endMonth),
+          this._calendar.getDaysInMonth(year, endMonth)
         ),
         type: 'SixMonthlyNovember',
         name: this.getPeriodNameByRange(
           head(sixMonthNovember || []),
           last(sixMonthNovember || []),
-          year,
+          year
         ),
         daily: this.getChildrenPeriods(
           id,
           'SixMonthlyNovember',
           'Daily',
-          this._preferences,
+          this._preferences
         ),
         weekly: this.getChildrenPeriods(
           id,
           'SixMonthlyNovember',
           'Weekly',
-          this._preferences,
+          this._preferences
         ),
         monthly: this.getChildrenPeriods(
           id,
           'SixMonthlyNovember',
           'Monthly',
-          this._preferences,
+          this._preferences
         ),
       };
     });
@@ -743,7 +843,7 @@ export class PeriodInstance {
     type: string,
     idSuffix = '',
     monthIndex = -1,
-    yearRange: number = 10,
+    yearRange: number = 10
   ) {
     return range(yearRange)
       .map((yearIndex) => {
@@ -758,12 +858,12 @@ export class PeriodInstance {
           startDate: this.getDate(
             periodYear,
             monthIndex + (monthIndex < 0 ? 2 : 1),
-            1,
+            1
           ),
           endDate: this.getDate(
             periodYear,
             endMonth,
-            this._calendar.getDaysInMonth(periodYear, endMonth),
+            this._calendar.getDaysInMonth(periodYear, endMonth)
           ),
           type,
           name,
@@ -772,19 +872,19 @@ export class PeriodInstance {
             id,
             type,
             'Weekly',
-            this._preferences,
+            this._preferences
           ),
           monthly: this.getChildrenPeriods(
             id,
             type,
             'Monthly',
-            this._preferences,
+            this._preferences
           ),
           quarterly: this.getChildrenPeriods(
             id,
             type,
             'Quarterly',
-            this._preferences,
+            this._preferences
           ),
         };
       })
@@ -793,7 +893,7 @@ export class PeriodInstance {
 
   omitFuturePeriods(periods: any[], type: string) {
     return periods.filter(
-      (period) => period.id < this.getCurrentPeriodId(type),
+      (period) => period.id < this.getCurrentPeriodId(type)
     );
   }
 
@@ -802,27 +902,33 @@ export class PeriodInstance {
       case 'Monthly': {
         return this.getMonthPeriodId(
           this._calendar.getCurrentYear(),
-          this._month,
+          this._month
+        );
+      }
+      case 'Weekly': {
+        return this.getMonthPeriodId(
+          this._calendar.getCurrentYear(),
+          this._month
         );
       }
       case 'Quarterly': {
         return this.getQuarterPeriodId(
           this._calendar.getCurrentYear(),
-          this._quarter,
+          this._quarter
         );
       }
 
       case 'BiMonthly': {
         return this.getBiMonthlyPeriodId(
           this._calendar.getCurrentYear(),
-          this._biMonth,
+          this._biMonth
         );
       }
 
       case 'SixMonthly': {
         return this.getSixMonthlyPeriodId(
           this._calendar.getCurrentYear(),
-          this._sixMonth,
+          this._sixMonth
         );
       }
 
@@ -830,7 +936,7 @@ export class PeriodInstance {
         return this.getSixMonthlyPeriodId(
           this._calendar.getCurrentYear(),
           this._sixMonthApril,
-          'April',
+          'April'
         );
       }
 
@@ -838,7 +944,7 @@ export class PeriodInstance {
         return this.getSixMonthlyPeriodId(
           this._calendar.getCurrentYear(),
           this._sixMonthNovember,
-          'Nov',
+          'Nov'
         );
       }
 
@@ -851,7 +957,7 @@ export class PeriodInstance {
 
         return this.getYearlyPeriodId(
           this._month >= 4 ? currentYear : currentYear - 1,
-          'FinancialApril',
+          'FinancialApril'
         );
       }
 
@@ -860,7 +966,7 @@ export class PeriodInstance {
 
         return this.getYearlyPeriodId(
           this._month >= 7 ? currentYear : currentYear - 1,
-          'FinancialJuly',
+          'FinancialJuly'
         );
       }
 
@@ -869,7 +975,7 @@ export class PeriodInstance {
 
         return this.getYearlyPeriodId(
           this._month >= 10 ? currentYear : currentYear - 1,
-          'FinancialOctober',
+          'FinancialOctober'
         );
       }
 
@@ -878,7 +984,7 @@ export class PeriodInstance {
 
         return this.getYearlyPeriodId(
           this._month >= 11 ? currentYear : currentYear - 1,
-          'FinancialNovember',
+          'FinancialNovember'
         );
       }
 
@@ -910,7 +1016,7 @@ export class PeriodInstance {
   getSixMonthlyPeriodId(
     year: number,
     sixMonthNumber: number,
-    sixMonthType = '',
+    sixMonthType = ''
   ) {
     return `${year}${sixMonthType}S${sixMonthNumber}`;
   }
@@ -929,14 +1035,13 @@ export class PeriodInstance {
     } ${year + 1}`;
   }
 
-  getYearlyMonthIndex(type: string) {
-  }
+  getYearlyMonthIndex(type: string) {}
 
   getChildrenPeriods(
     parentId: string,
     parentType: string,
     childrenType: string,
-    preferences: any,
+    preferences: any
   ) {
     let periods = [];
 
@@ -962,7 +1067,7 @@ export class PeriodInstance {
               const monthPeriods = this.getPeriods(
                 childrenType,
                 year,
-                this._quarterMonthOffset,
+                this._quarterMonthOffset
               );
 
               periods = (monthPeriods || [])

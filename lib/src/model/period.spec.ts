@@ -4,14 +4,14 @@ import { PeriodInterface } from '../interfaces/period.interface';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 
 describe('Given and instance of period class', () => {
-  let period = new Period();
+  const period = new Period();
   it('should be instantiated', () => {
     expect(period).toBeInstanceOf(Period);
   });
 });
 
 describe('Given I set period type', () => {
-  let period = new Period();
+  const period = new Period();
   period.setType('Monthly');
 
   it('should return set period type', () => {
@@ -20,7 +20,7 @@ describe('Given I set period type', () => {
 });
 
 describe('Given I set monthly period type for ethiopian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('ethiopian').setType('Monthly').get();
 
   const periodResult = period.list();
@@ -31,7 +31,7 @@ describe('Given I set monthly period type for ethiopian calendar', () => {
 });
 
 describe('Given I set monthly period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Monthly').get();
 
   const periodResult = period.list();
@@ -42,7 +42,7 @@ describe('Given I set monthly period type for gregorian calendar', () => {
 });
 
 describe('Given I set month of January for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Monthly').get();
 
   const periodResult = period.getById('202001');
@@ -54,7 +54,7 @@ describe('Given I set month of January for gregorian calendar', () => {
 });
 
 describe('Given I set month of February for gregorian calendar and for leap year', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Monthly').get();
 
   const periodResult = period.getById('202002');
@@ -66,7 +66,7 @@ describe('Given I set month of February for gregorian calendar and for leap year
 });
 
 describe('Given I set month of February for gregorian calendar and for non leap year', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Monthly').get();
 
   const periodResult = period.getById('201902');
@@ -78,7 +78,7 @@ describe('Given I set month of February for gregorian calendar and for non leap 
 });
 
 describe('Given I set month of April for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Monthly').get();
 
   const periodResult = period.getById('202004');
@@ -90,7 +90,7 @@ describe('Given I set month of April for gregorian calendar', () => {
 });
 
 describe('Given I set quarter Jan-March 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Quarterly').get();
 
   const periodResult = period.getById('2020Q1');
@@ -102,7 +102,7 @@ describe('Given I set quarter Jan-March 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set quarter April-June 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Quarterly').get();
 
   const periodResult = period.getById('2020Q2');
@@ -114,7 +114,7 @@ describe('Given I set quarter April-June 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set year 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Yearly').get();
 
   const periodResult = period.getById('2020');
@@ -126,7 +126,7 @@ describe('Given I set year 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set financial april year 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType(PeriodTypeEnum.FINANCIAL_APRIL).get();
 
   const periodResult = period.getById('2020April');
@@ -138,7 +138,7 @@ describe('Given I set financial april year 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set six monthly 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType(PeriodTypeEnum.SIX_MONTHLY).get();
 
   const periodResult = period.getById('2020S1');
@@ -150,7 +150,7 @@ describe('Given I set six monthly 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set six monthly april 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.SIX_MONTHLY_APRIL)
@@ -165,7 +165,7 @@ describe('Given I set six monthly april 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set six monthly april 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.SIX_MONTHLY_APRIL)
@@ -180,7 +180,7 @@ describe('Given I set six monthly april 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set six monthly november 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.SIX_MONTHLY_NOVEMBER)
@@ -195,7 +195,7 @@ describe('Given I set six monthly november 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set six monthly november 2020 for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.SIX_MONTHLY_NOVEMBER)
@@ -210,7 +210,7 @@ describe('Given I set six monthly november 2020 for gregorian calendar', () => {
 });
 
 describe('Given I set monthly period type for gregorian calendar and previous year', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType('Monthly').get();
   const previousYear = period.currentYear() - 1;
 
@@ -239,7 +239,7 @@ describe('Given I set monthly period type for ethiopian calendar and previous ye
 });
 
 describe('Given I set quarterly period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setType('Quarterly')
     .setCalendar('gregorian')
@@ -256,7 +256,7 @@ describe('Given I set quarterly period type for gregorian calendar', () => {
 });
 
 describe('Given I set relative quarter period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.RELATIVE_QUARTER)
@@ -270,7 +270,7 @@ describe('Given I set relative quarter period type for gregorian calendar', () =
 });
 
 describe('Given I set relative six month period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.RELATIVE_SIX_MONTH)
@@ -284,7 +284,7 @@ describe('Given I set relative six month period type for gregorian calendar', ()
 });
 
 describe('Given I set relative bi month period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period
     .setCalendar('gregorian')
     .setType(PeriodTypeEnum.RELATIVE_BI_MONTH)
@@ -298,7 +298,7 @@ describe('Given I set relative bi month period type for gregorian calendar', () 
 });
 
 describe('Given I set relative month period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType(PeriodTypeEnum.RELATIVE_MONTH).get();
 
   const periodResult = period.list();
@@ -309,7 +309,7 @@ describe('Given I set relative month period type for gregorian calendar', () => 
 });
 
 describe('Given I set relative year period type for gregorian calendar', () => {
-  let period = new Period();
+  const period = new Period();
   period.setCalendar('gregorian').setType(PeriodTypeEnum.RELATIVE_YEAR).get();
 
   const periodResult = period.list();
@@ -320,7 +320,7 @@ describe('Given I set relative year period type for gregorian calendar', () => {
 });
 
 describe('Given I set a monthly valid period id', () => {
-  let period = new Period();
+  const period = new Period();
   const periodObject: PeriodInterface = period.getById('201001');
 
   it('should return month period details for the supplied id', () => {
@@ -329,7 +329,7 @@ describe('Given I set a monthly valid period id', () => {
 });
 
 describe('Given I set a relative monthly valid period id', () => {
-  let period = new Period();
+  const period = new Period();
   const periodObject: PeriodInterface = period.getById('LAST_MONTH');
 
   it('should return relative month period details for the supplied id', () => {
@@ -342,7 +342,7 @@ describe('Given I set a relative monthly valid period id', () => {
 });
 
 describe('Given I set a relative ten years period', () => {
-  let period = new Period();
+  const period = new Period();
   const periodObject: PeriodInterface = period.getById('LAST_10_YEARS');
 
   it('should return ten iso formated periods', () => {
@@ -350,12 +350,23 @@ describe('Given I set a relative ten years period', () => {
   });
 });
 
-
 describe('Given a period with allow future period set', () => {
-  let period = new Period().setPreferences({ allowFuturePeriods: true });
-  const periodObject: PeriodInterface = period.getById(new Date().getFullYear().toString());
+  const period = new Period().setPreferences({ allowFuturePeriods: true });
+  const periodObject: PeriodInterface = period.getById(
+    new Date().getFullYear().toString()
+  );
 
   it('should return last period', () => {
     expect(periodObject.lastPeriod).toBeDefined();
+  });
+});
+
+describe('Given I set weekly period type for gregorian calendar', () => {
+  const period = new Period();
+  period.setCalendar('gregorian').setType('Weekly').get();
+  const periodResult = period.list();
+
+  it('should return weekly period list for the current month', () => {
+    expect(periodResult.length <= 9).toEqual(true);
   });
 });
