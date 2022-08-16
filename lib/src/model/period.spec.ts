@@ -1,5 +1,5 @@
 import { Period } from './period';
-import { PeriodSortOrderEnum } from '../constants/period.constant';
+import { PeriodSortOrder } from '../constants/period.constant';
 import { PeriodInterface } from '../interfaces/period.interface';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 
@@ -244,14 +244,18 @@ describe('Given I set quarterly period type for gregorian calendar', () => {
     .setType('Quarterly')
     .setCalendar('gregorian')
     .setPreferences({
-      allowFuturePeriods: true,
-      childrenPeriodSortOrder: PeriodSortOrderEnum.ASCENDING,
+      openFuturePeriods: 1,
+      childrenPeriodSortOrder: PeriodSortOrder.ASCENDING,
     })
     .get();
   const periodResult = period.list();
 
   it('should return quarterly period list for the current year', () => {
     expect(periodResult.length > 0).toEqual(true);
+  });
+
+  it('should return quarterly period list including one future quarter', () => {
+    expect(periodResult.length).toEqual(3);
   });
 });
 

@@ -1,4 +1,5 @@
 import { chunk, find, head, last, range, sortBy, uniqBy } from 'lodash';
+import { PeriodPreferencesInterface } from '../../../dist';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 import { getLastNthPeriods } from '../helpers/get-last-nth-periods.helper';
 import { PeriodInterface } from '../interfaces/period.interface';
@@ -6,7 +7,7 @@ import { Calendar } from './calendar/calendar.utility';
 
 export class PeriodInstance {
   private _type: string;
-  private _preferences: any;
+  private _preferences: PeriodPreferencesInterface;
   private _periods: any[];
   private _calendar: Calendar;
   private _year: number;
@@ -48,18 +49,41 @@ export class PeriodInstance {
 
   get() {
     this._periods = this.getPeriods(this._type, this._year);
+    const periodsInDescendingOrder = [
+      ...this._periods.sort((a, b) => {
+        const dateA: any = new Date(a.startDate);
+        const dateB: any = new Date(b.startDate);
+        return dateB - dateA;
+      }),
+    ];
 
-    if (
-      (this._preferences && this._preferences.allowFuturePeriods) ||
-      this._type.indexOf('Relative') !== -1
-    ) {
-      return this._periods.reverse();
+    if (this._type.indexOf('Relative') !== -1) {
+      return periodsInDescendingOrder;
     }
 
-    return this.omitFuturePeriods(
+    const previousPeriods = this.omitFuturePeriods(
       this.includeLastPeriods(this._periods, this._type, this._year),
       this._type
-    ).reverse();
+    ).sort((a, b) => {
+      const dateA: any = new Date(a.startDate);
+      const dateB: any = new Date(b.startDate);
+      return dateB - dateA;
+    });
+
+    if (this._preferences && this._preferences.openFuturePeriods > 0) {
+      const futurePeriods = periodsInDescendingOrder
+        .filter(
+          (period) =>
+            !previousPeriods.some(
+              (previousPeriod) => previousPeriod.id === period.id
+            )
+        )
+        .slice(-this._preferences.openFuturePeriods);
+
+      return [...futurePeriods, ...previousPeriods];
+    }
+
+    return previousPeriods;
   }
 
   year() {
