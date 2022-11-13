@@ -1,4 +1,4 @@
-import { chunk, find, head, last, range, sortBy, uniqBy } from 'lodash';
+import { chunk, find, head, last, pick, range, sortBy, uniqBy } from 'lodash';
 import { PeriodPreferencesInterface } from '../../../dist';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 import { getLastNthPeriods } from '../helpers/get-last-nth-periods.helper';
@@ -71,7 +71,11 @@ export class PeriodInstance {
     });
 
     if (this._preferences && this._preferences.openFuturePeriods > 0) {
-      const futurePeriods = periodsInDescendingOrder
+      const futurePeriods = this.includeLastPeriods(
+        periodsInDescendingOrder,
+        this._type,
+        this._year
+      )
         .filter(
           (period) =>
             !previousPeriods.some(
@@ -174,21 +178,27 @@ export class PeriodInstance {
 
   includeLastPeriods(periods: any[], type: string, year: number) {
     const lastYearPeriods = this.getPeriods(type, year - 1);
-    const currentPeriods = periods;
 
-    return (periods || []).map((period, periodIndex) => {
-      const lastPeriod =
-        currentPeriods[periodIndex - 1] || last(lastYearPeriods);
+    return (periods || [])
+      .sort((a, b) => {
+        const dateA: any = new Date(a.startDate);
+        const dateB: any = new Date(b.startDate);
+        return dateB - dateA;
+      })
+      .map((period, periodIndex) => {
+        const lastPeriod = periods[periodIndex + 1] || last(lastYearPeriods);
 
-      const newLastPeriod = {
-        id: lastPeriod.id,
-        name: lastPeriod.name,
-      };
-
-      period.lastPeriod = newLastPeriod;
-
-      return period;
-    });
+        return {
+          ...period,
+          lastPeriod: pick(lastPeriod, [
+            'id',
+            'name',
+            'startDate',
+            'endDate',
+            'type',
+          ]),
+        };
+      });
   }
 
   getRelativePeriods(type: string) {

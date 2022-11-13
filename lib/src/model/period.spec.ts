@@ -255,7 +255,7 @@ describe('Given I set quarterly period type for gregorian calendar', () => {
   });
 
   it('should return quarterly period list including one future quarter', () => {
-    expect(periodResult.length).toEqual(3);
+    expect(periodResult.length).toEqual(4);
   });
 });
 
