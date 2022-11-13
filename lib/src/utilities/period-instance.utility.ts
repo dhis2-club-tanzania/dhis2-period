@@ -102,6 +102,10 @@ export class PeriodInstance {
     let periods;
 
     switch (type) {
+      case 'Weekly': {
+        periods = this.getWeeklyPeriods(year, offset);
+        break;
+      }
       case 'Monthly': {
         periods = this.getMonthlyPeriods(year, offset);
         break;
@@ -997,14 +1001,16 @@ export class PeriodInstance {
                 this._quarterMonthOffset
               );
 
-              periods = (monthPeriods || [])
-                .filter(({}, periodIndex) => {
-                  const max = quarterNumber * 3;
-                  const min = max - 3;
+              periods = [
+                ...(monthPeriods || [])
+                  .filter(({}, periodIndex) => {
+                    const max = quarterNumber * 3;
+                    const min = max - 3;
 
-                  return periodIndex >= min && periodIndex < max;
-                })
-                .reverse();
+                    return periodIndex >= min && periodIndex < max;
+                  })
+                  .reverse(),
+              ];
               break;
             }
 
@@ -1026,14 +1032,16 @@ export class PeriodInstance {
 
               const monthPeriods = this.getPeriods(childrenType, year, 0);
 
-              periods = (monthPeriods || [])
-                .filter(({}, periodIndex) => {
-                  const max = biMonthlyNumber * 2;
-                  const min = max - 2;
+              periods = [
+                ...(monthPeriods || [])
+                  .filter(({}, periodIndex) => {
+                    const max = biMonthlyNumber * 2;
+                    const min = max - 2;
 
-                  return periodIndex >= min && periodIndex < max;
-                })
-                .reverse();
+                    return periodIndex >= min && periodIndex < max;
+                  })
+                  .reverse(),
+              ];
               break;
             }
 
@@ -1055,14 +1063,16 @@ export class PeriodInstance {
 
               const monthPeriods = this.getPeriods(childrenType, year, 0);
 
-              periods = (monthPeriods || [])
-                .filter(({}, periodIndex) => {
-                  const max = sixMonthlyNumber * 6;
-                  const min = max - 6;
+              periods = [
+                ...(monthPeriods || [])
+                  .filter(({}, periodIndex) => {
+                    const max = sixMonthlyNumber * 6;
+                    const min = max - 6;
 
-                  return periodIndex >= min && periodIndex < max;
-                })
-                .reverse();
+                    return periodIndex >= min && periodIndex < max;
+                  })
+                  .reverse(),
+              ];
               break;
             }
 
@@ -1079,7 +1089,7 @@ export class PeriodInstance {
     }
 
     if (preferences && preferences.childrenPeriodSortOrder === 'ASC') {
-      return periods.reverse();
+      return [...periods.reverse()];
     }
 
     return periods;
