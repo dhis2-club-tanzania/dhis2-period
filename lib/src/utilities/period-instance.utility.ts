@@ -1,7 +1,7 @@
-import { chunk, find, head, last, pick, range, sortBy, uniqBy } from 'lodash';
-import { PeriodPreferencesInterface } from '../../../dist';
+import { chunk, find, head, last, pick, range, sortBy } from 'lodash';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 import { getLastNthPeriods } from '../helpers/get-last-nth-periods.helper';
+import { PeriodPreferencesInterface } from '../interfaces/period-preferences.interface';
 import { PeriodInterface } from '../interfaces/period.interface';
 import { Calendar } from './calendar/calendar.utility';
 
@@ -61,6 +61,11 @@ export class PeriodInstance {
       return periodsInDescendingOrder;
     }
 
+    //! Omit weekly future period
+    if (this._type === 'Weekly') {
+      return this._periods;
+    }
+
     const previousPeriods = this.omitFuturePeriods(
       this.includeLastPeriods(this._periods, this._type, this._year),
       this._type
@@ -103,7 +108,7 @@ export class PeriodInstance {
 
     switch (type) {
       case 'Weekly': {
-        periods = this.getWeeklyPeriods(year, offset);
+        periods = this.weeksInYear(year);
         break;
       }
       case 'Monthly': {
@@ -176,7 +181,6 @@ export class PeriodInstance {
         periods = [];
         break;
     }
-
     return periods;
   }
 
@@ -482,6 +486,7 @@ export class PeriodInstance {
         return [];
     }
   }
+
   getMonthlyPeriods(year: number, offset = 0) {
     const monthPeriods = (this._monthNames || []).map(
       (monthName, monthIndex) => {
@@ -842,6 +847,12 @@ export class PeriodInstance {
           this._month
         );
       }
+      case 'Weekly': {
+        return this.getMonthPeriodId(
+          this._calendar.getCurrentYear(),
+          this._month
+        );
+      }
       case 'Quarterly': {
         return this.getQuarterPeriodId(
           this._calendar.getCurrentYear(),
@@ -1093,5 +1104,137 @@ export class PeriodInstance {
     }
 
     return periods;
+  }
+  getWeekNumber(d: any) {
+    d = new Date(+d);
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() + 4 - (d.getDay() || 7));
+    const yearStart: any = new Date(d.getFullYear(), 0, 1);
+    const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+    return [d.getFullYear(), weekNo];
+  }
+
+  getDateOfWeek(weekNo: any, year: any) {
+    let startdate = new Date(year, 0, 1 + (weekNo - 1) * 7);
+    startdate.setDate(startdate.getDate() + (1 - startdate.getDay()));
+    let enddate = new Date(startdate);
+    enddate.setDate(enddate.getDate() + 6); // plus more 6 days
+    return {
+      id: `${year}W${weekNo}`,
+      week: weekNo,
+      name: `Week ${weekNo} ${this.sanitizeDateString(
+        startdate
+      )} - ${this.sanitizeDateString(enddate)}`,
+      startdate: this.sanitizeDateString(startdate),
+      enddate: this.sanitizeDateString(enddate),
+    };
+  }
+
+  sanitizeDateString(dateString: any) {
+    const currentDateValue = new Date(dateString);
+    const day = currentDateValue.getDate();
+    const month = currentDateValue.getMonth() + 1;
+    const formattedDate =
+      currentDateValue.getFullYear() +
+      '-' +
+      ((month < 10 ? '0' : '') + month) +
+      '-' +
+      ((day < 10 ? '0' : '') + day);
+    return formattedDate;
+  }
+
+  weeksInYear(year: any) {
+    const d = new Date(year, 11, 31);
+    const week = this.getWeekNumber(d)[1];
+    const currentYear = new Date().getFullYear();
+    const todayWeekNo = this.getWeekNumber(new Date())[1];
+    const totalWeeks = week == 1 ? 52 : week;
+    const lastyear = year - 1;
+    const lastYeard = new Date(lastyear, 11, 31);
+    let periods = [];
+    if (currentYear === year) {
+      for (let week = 1; week <= todayWeekNo; week++) {
+        const periodItem = this.getDateOfWeek(week, year);
+        periods.push({
+          ...periodItem,
+          id: `${year}W${week - 1}`,
+          week: week - 1,
+          name: `Week ${week - 1} ${periodItem.startdate} - ${
+            periodItem.enddate
+          }`,
+        });
+      }
+    }
+    if (currentYear !== year) {
+      for (let week = 1; week <= totalWeeks + 1; week++) {
+        const periodItem = this.getDateOfWeek(week, year);
+        periods.push({
+          ...periodItem,
+          id: `${year}W${week - 1}`,
+          week: week - 1,
+          name: `Week ${week - 1} ${periodItem.startdate} - ${
+            periodItem.enddate
+          }`,
+        });
+      }
+    }
+
+    return periods.filter((item) => item.week).sort((a, b) => b.week - a.week);
+  }
+
+  computePeriods(targetPeriod: any) {
+    const targetPeriodWeeks = this.weeksInYear(targetPeriod);
+    const firstWeekOfTargetPeriod = targetPeriodWeeks.slice(-1)[0];
+    const lastyearPeriodWeeks = this.weeksInYear(targetPeriod - 1);
+    const lastWeekItemLastYear = lastyearPeriodWeeks[0];
+    if (
+      firstWeekOfTargetPeriod &&
+      lastWeekItemLastYear &&
+      firstWeekOfTargetPeriod.startdate === lastWeekItemLastYear.startdate &&
+      firstWeekOfTargetPeriod.enddate === lastWeekItemLastYear.enddate
+    ) {
+      const trimmedCurrentYearWeeks = targetPeriodWeeks.slice(0, -1);
+      const updatedWeeks = (trimmedCurrentYearWeeks.reverse() || []).map(
+        (weekItem, index) => ({
+          id: `${targetPeriod}W${index + 1}`,
+          week: index + 1,
+          name: `Week ${index + 1} ${weekItem.startdate} - ${weekItem.enddate}`,
+          startdate: weekItem.startdate,
+          enddate: weekItem.enddate,
+        })
+      );
+
+      return updatedWeeks.reverse();
+    } else {
+      return targetPeriodWeeks;
+    }
+  }
+
+  targetFinalPeriod(targetPeriod: any) {
+    const targetPeriodWeeks = this.weeksInYear(targetPeriod);
+    const lastyearPeriodWeeks = this.weeksInYear(targetPeriod - 1);
+    const lastWeekItemLastYear = lastyearPeriodWeeks[0];
+    const firstWeekOfTargetPeriod = targetPeriodWeeks.slice(-1)[0];
+    if (
+      firstWeekOfTargetPeriod &&
+      lastWeekItemLastYear &&
+      firstWeekOfTargetPeriod.startdate === lastWeekItemLastYear.startdate &&
+      firstWeekOfTargetPeriod.enddate === lastWeekItemLastYear.enddate
+    ) {
+      const trimmedCurrentYearWeeks = targetPeriodWeeks.slice(0, -1);
+      const updatedWeeks = (trimmedCurrentYearWeeks.reverse() || []).map(
+        (weekItem, index) => ({
+          id: `${targetPeriod}W${index + 1}`,
+          week: index + 1,
+          name: `Week ${index + 1} ${weekItem.startdate} - ${weekItem.enddate}`,
+          startdate: weekItem.startdate,
+          enddate: weekItem.enddate,
+        })
+      );
+
+      return updatedWeeks.reverse();
+    } else {
+      return targetPeriodWeeks;
+    }
   }
 }

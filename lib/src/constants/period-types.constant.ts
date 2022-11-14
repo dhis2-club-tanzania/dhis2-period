@@ -1,6 +1,7 @@
 import { PeriodTypeInterface } from '../interfaces/period-type.interface';
 
 export enum PeriodTypeEnum {
+  WEEKLY = 'Weekly',
   MONTHLY = 'Monthly',
   BI_MONTHLY = 'BiMonthly',
   QUARTERLY = 'Quarterly',
@@ -22,6 +23,7 @@ export enum PeriodTypeEnum {
 }
 
 export const periodTypes: PeriodTypeInterface[] = [
+  { id: PeriodTypeEnum.WEEKLY, name: PeriodTypeEnum.WEEKLY, rank: 2 },
   { id: PeriodTypeEnum.MONTHLY, name: PeriodTypeEnum.MONTHLY, rank: 3 },
   { id: PeriodTypeEnum.BI_MONTHLY, name: PeriodTypeEnum.BI_MONTHLY, rank: 4 },
   { id: PeriodTypeEnum.QUARTERLY, name: PeriodTypeEnum.QUARTERLY, rank: 5 },
