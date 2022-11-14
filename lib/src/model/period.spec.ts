@@ -1,5 +1,5 @@
 import { Period } from './period';
-import { PeriodSortOrderEnum } from '../constants/period.constant';
+import { PeriodSortOrder } from '../constants/period.constant';
 import { PeriodInterface } from '../interfaces/period.interface';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 
@@ -244,14 +244,18 @@ describe('Given I set quarterly period type for gregorian calendar', () => {
     .setType('Quarterly')
     .setCalendar('gregorian')
     .setPreferences({
-      allowFuturePeriods: true,
-      childrenPeriodSortOrder: PeriodSortOrderEnum.ASCENDING,
+      openFuturePeriods: 1,
+      childrenPeriodSortOrder: PeriodSortOrder.ASCENDING,
     })
     .get();
   const periodResult = period.list();
 
   it('should return quarterly period list for the current year', () => {
     expect(periodResult.length > 0).toEqual(true);
+  });
+
+  it('should return quarterly period list including one future quarter', () => {
+    expect(periodResult.length).toEqual(4);
   });
 });
 
@@ -351,7 +355,7 @@ describe('Given I set a relative ten years period', () => {
 });
 
 describe('Given a period with allow future period set', () => {
-  const period = new Period().setPreferences({ allowFuturePeriods: true });
+  const period = new Period().setPreferences({ openFuturePeriods: 1 });
   const periodObject: PeriodInterface = period.getById(
     new Date().getFullYear().toString()
   );
@@ -367,6 +371,6 @@ describe('Given I set weekly period type for gregorian calendar', () => {
   const periodResult = period.list();
 
   it('should return weekly period list for the current month', () => {
-    expect(periodResult.length <= 9).toEqual(true);
+    expect(periodResult.length > 0).toEqual(true);
   });
 });

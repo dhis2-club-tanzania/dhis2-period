@@ -1,12 +1,13 @@
-import { chunk, find, head, last, range, sortBy } from 'lodash';
+import { chunk, find, head, last, pick, range, sortBy } from 'lodash';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
 import { getLastNthPeriods } from '../helpers/get-last-nth-periods.helper';
+import { PeriodPreferencesInterface } from '../interfaces/period-preferences.interface';
 import { PeriodInterface } from '../interfaces/period.interface';
 import { Calendar } from './calendar/calendar.utility';
 
 export class PeriodInstance {
   private _type: string;
-  private _preferences: any;
+  private _preferences: PeriodPreferencesInterface;
   private _periods: any[];
   private _calendar: Calendar;
   private _year: number;
@@ -48,22 +49,50 @@ export class PeriodInstance {
 
   get() {
     this._periods = this.getPeriods(this._type, this._year);
+    const periodsInDescendingOrder = [
+      ...this._periods.sort((a, b) => {
+        const dateA: any = new Date(a.startDate);
+        const dateB: any = new Date(b.startDate);
+        return dateB - dateA;
+      }),
+    ];
+
+    if (this._type.indexOf('Relative') !== -1) {
+      return periodsInDescendingOrder;
+    }
 
     //! Omit weekly future period
     if (this._type === 'Weekly') {
       return this._periods;
     }
-    if (
-      (this._preferences && this._preferences.allowFuturePeriods) ||
-      this._type.indexOf('Relative') !== -1
-    ) {
-      return this.includeLastPeriods(this._periods, this._type, this._year);
-    }
 
-    return this.omitFuturePeriods(
+    const previousPeriods = this.omitFuturePeriods(
       this.includeLastPeriods(this._periods, this._type, this._year),
       this._type
-    ).reverse();
+    ).sort((a, b) => {
+      const dateA: any = new Date(a.startDate);
+      const dateB: any = new Date(b.startDate);
+      return dateB - dateA;
+    });
+
+    if (this._preferences && this._preferences.openFuturePeriods > 0) {
+      const futurePeriods = this.includeLastPeriods(
+        periodsInDescendingOrder,
+        this._type,
+        this._year
+      )
+        .filter(
+          (period) =>
+            !previousPeriods.some(
+              (previousPeriod) => previousPeriod.id === period.id
+            )
+        )
+        .slice(-this._preferences.openFuturePeriods);
+
+      return [...futurePeriods, ...previousPeriods];
+    }
+
+    return previousPeriods;
   }
 
   year() {
@@ -157,21 +186,27 @@ export class PeriodInstance {
 
   includeLastPeriods(periods: any[], type: string, year: number) {
     const lastYearPeriods = this.getPeriods(type, year - 1);
-    const currentPeriods = periods;
 
-    return (periods || []).map((period, periodIndex) => {
-      const lastPeriod =
-        currentPeriods[periodIndex - 1] || last(lastYearPeriods);
+    return (periods || [])
+      .sort((a, b) => {
+        const dateA: any = new Date(a.startDate);
+        const dateB: any = new Date(b.startDate);
+        return dateB - dateA;
+      })
+      .map((period, periodIndex) => {
+        const lastPeriod = periods[periodIndex + 1] || last(lastYearPeriods);
 
-      const newLastPeriod = {
-        id: lastPeriod.id,
-        name: lastPeriod.name,
-      };
-
-      period.lastPeriod = newLastPeriod;
-
-      return period;
-    });
+        return {
+          ...period,
+          lastPeriod: pick(lastPeriod, [
+            'id',
+            'name',
+            'startDate',
+            'endDate',
+            'type',
+          ]),
+        };
+      });
   }
 
   getRelativePeriods(type: string) {
@@ -977,14 +1012,16 @@ export class PeriodInstance {
                 this._quarterMonthOffset
               );
 
-              periods = (monthPeriods || [])
-                .filter(({}, periodIndex) => {
-                  const max = quarterNumber * 3;
-                  const min = max - 3;
+              periods = [
+                ...(monthPeriods || [])
+                  .filter(({}, periodIndex) => {
+                    const max = quarterNumber * 3;
+                    const min = max - 3;
 
-                  return periodIndex >= min && periodIndex < max;
-                })
-                .reverse();
+                    return periodIndex >= min && periodIndex < max;
+                  })
+                  .reverse(),
+              ];
               break;
             }
 
@@ -1006,14 +1043,16 @@ export class PeriodInstance {
 
               const monthPeriods = this.getPeriods(childrenType, year, 0);
 
-              periods = (monthPeriods || [])
-                .filter(({}, periodIndex) => {
-                  const max = biMonthlyNumber * 2;
-                  const min = max - 2;
+              periods = [
+                ...(monthPeriods || [])
+                  .filter(({}, periodIndex) => {
+                    const max = biMonthlyNumber * 2;
+                    const min = max - 2;
 
-                  return periodIndex >= min && periodIndex < max;
-                })
-                .reverse();
+                    return periodIndex >= min && periodIndex < max;
+                  })
+                  .reverse(),
+              ];
               break;
             }
 
@@ -1035,14 +1074,16 @@ export class PeriodInstance {
 
               const monthPeriods = this.getPeriods(childrenType, year, 0);
 
-              periods = (monthPeriods || [])
-                .filter(({}, periodIndex) => {
-                  const max = sixMonthlyNumber * 6;
-                  const min = max - 6;
+              periods = [
+                ...(monthPeriods || [])
+                  .filter(({}, periodIndex) => {
+                    const max = sixMonthlyNumber * 6;
+                    const min = max - 6;
 
-                  return periodIndex >= min && periodIndex < max;
-                })
-                .reverse();
+                    return periodIndex >= min && periodIndex < max;
+                  })
+                  .reverse(),
+              ];
               break;
             }
 
@@ -1059,7 +1100,7 @@ export class PeriodInstance {
     }
 
     if (preferences && preferences.childrenPeriodSortOrder === 'ASC') {
-      return periods.reverse();
+      return [...periods.reverse()];
     }
 
     return periods;
@@ -1147,8 +1188,10 @@ export class PeriodInstance {
     const lastyearPeriodWeeks = this.weeksInYear(targetPeriod - 1);
     const lastWeekItemLastYear = lastyearPeriodWeeks[0];
     if (
-      firstWeekOfTargetPeriod?.startdate === lastWeekItemLastYear?.startdate &&
-      firstWeekOfTargetPeriod?.enddate === lastWeekItemLastYear?.enddate
+      firstWeekOfTargetPeriod &&
+      lastWeekItemLastYear &&
+      firstWeekOfTargetPeriod.startdate === lastWeekItemLastYear.startdate &&
+      firstWeekOfTargetPeriod.enddate === lastWeekItemLastYear.enddate
     ) {
       const trimmedCurrentYearWeeks = targetPeriodWeeks.slice(0, -1);
       const updatedWeeks = (trimmedCurrentYearWeeks.reverse() || []).map(
@@ -1173,8 +1216,10 @@ export class PeriodInstance {
     const lastWeekItemLastYear = lastyearPeriodWeeks[0];
     const firstWeekOfTargetPeriod = targetPeriodWeeks.slice(-1)[0];
     if (
-      firstWeekOfTargetPeriod?.startdate === lastWeekItemLastYear?.startdate &&
-      firstWeekOfTargetPeriod?.enddate === lastWeekItemLastYear?.enddate
+      firstWeekOfTargetPeriod &&
+      lastWeekItemLastYear &&
+      firstWeekOfTargetPeriod.startdate === lastWeekItemLastYear.startdate &&
+      firstWeekOfTargetPeriod.enddate === lastWeekItemLastYear.enddate
     ) {
       const trimmedCurrentYearWeeks = targetPeriodWeeks.slice(0, -1);
       const updatedWeeks = (trimmedCurrentYearWeeks.reverse() || []).map(
