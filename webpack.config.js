@@ -56,21 +56,23 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      { from: 'lib/package.json', to: '' },
-      { from: 'lib/*.md', to: '', flatten: true },
-      { from: 'LICENSE', to: '' },
-    ]),
-    new TypedocWebpackPlugin(
-      {
-        name: 'DHIS2 Period',
-        mode: 'file',
-        out: '../docs',
-        theme: 'default',
-        includeDeclarations: false,
-        ignoreCompilerErrors: true,
-      },
-      './lib'
-    ),
+    new CopyPlugin({
+      patterns: [
+        { from: 'lib/package.json', to: '' },
+        { from: 'lib/*.md', to: '', to: '[name][ext]' },
+        { from: 'LICENSE', to: '' },
+      ],
+    }),
+    // new TypedocWebpackPlugin(
+    //   {
+    //     name: 'DHIS2 Period',
+    //     mode: 'file',
+    //     out: '../docs',
+    //     theme: 'default',
+    //     includeDeclarations: false,
+    //     ignoreCompilerErrors: true,
+    //   },
+    //   './lib'
+    // ),
   ],
 };
