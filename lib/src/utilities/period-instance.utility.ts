@@ -1115,7 +1115,7 @@ export class PeriodInstance {
   }
 
   getDateOfWeek(weekNo: any, year: any) {
-    let startdate = new Date(year, 0, 1 + (weekNo - 1) * 7);
+    let startdate = new Date(year, 0, 1 + (weekNo - 1 - 1) * 7);
     startdate.setDate(startdate.getDate() + (1 - startdate.getDay()));
     let enddate = new Date(startdate);
     enddate.setDate(enddate.getDate() + 6); // plus more 6 days
