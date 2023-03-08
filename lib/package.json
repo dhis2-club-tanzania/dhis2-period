@@ -1,16 +1,16 @@
 {
   "name": "@iapps/period-utilities",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hisptz/dhis2-period.git"
+    "url": "git+https://github.com/dhis2-club-tanzania/dhis2-period.git"
   },
   "author": "Rajab Mkomwa",
   "license": "LGPL-3.0",
   "bugs": {
-    "url": "https://github.com/hisptz/dhis2-period/issues"
+    "url": "https://github.com/dhis2-club-tanzania/dhis2-period/issues"
   },
-  "homepage": "https://github.com/hisptz/dhis2-period#readme",
+  "homepage": "https://github.com/dhis2-club-tanzania/dhis2-period#readme",
   "peerDependencies": {
     "lodash": "^4.17.15"
   }
