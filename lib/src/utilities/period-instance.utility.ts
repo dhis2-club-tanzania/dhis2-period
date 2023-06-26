@@ -4,6 +4,7 @@ import { getLastNthPeriods } from '../helpers/get-last-nth-periods.helper';
 import { PeriodPreferencesInterface } from '../interfaces/period-preferences.interface';
 import { PeriodInterface } from '../interfaces/period.interface';
 import { Calendar } from './calendar/calendar.utility';
+import { WeeklyPeriodInstance } from './period-instances';
 
 export class PeriodInstance {
   private _type: string;
@@ -63,6 +64,8 @@ export class PeriodInstance {
 
     //! Omit weekly future period
     if (this._type === 'Weekly') {
+      const weeklyInstance = new WeeklyPeriodInstance(this._calendar);
+      console.log(weeklyInstance.get());
       return this._periods;
     }
 
@@ -1165,6 +1168,7 @@ export class PeriodInstance {
         });
       }
     }
+
     if (currentYear !== year) {
       for (let week = 1; week <= totalWeeks + 1; week++) {
         const periodItem = this.getDateOfWeek(week, year);

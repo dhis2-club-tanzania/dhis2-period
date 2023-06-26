@@ -1,6 +1,6 @@
 import { CalendarDate } from './calendar-date.utility';
 
-export class BaseCalendar {
+export abstract class BaseCalendar {
   _validateLevel: number;
   _name: string;
   _hasYearZero: boolean;
@@ -79,6 +79,9 @@ export class BaseCalendar {
     this._validateLevel--;
     return valid;
   }
+
+  abstract monthNames(): string[];
+  abstract quarterMonthOffset(): number;
 
   newDate(yearOrDate: any, month: number, day: number): CalendarDate {
     if (!yearOrDate) {
