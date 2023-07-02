@@ -389,7 +389,17 @@ describe('Given I set weekly period type and open for future period for gregoria
     .get();
   const periodResult = period.list();
 
-  it('should return weekly period list including one future quarter', () => {
-    expect(periodResult.length).toEqual(getWeek(new Date()) - 2);
+  it('should return weekly period list including one future week', () => {
+    expect(periodResult.length).toEqual(getWeek(new Date()));
+  });
+});
+
+describe('Given I set weekly period type for a specific year for gregorian calendar', () => {
+  const period = new Period();
+  period.setType('Weekly').setCalendar('gregorian').setYear(2021).get();
+  const periodResult = period.list();
+
+  it('should return weekly period list for the set year', () => {
+    expect(periodResult.length).toEqual(52);
   });
 });

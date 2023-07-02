@@ -1,15 +1,12 @@
 import { BaseCalendar } from './base-calendar.utility';
 import { EthiopianCalendar } from './ethiopian-calendar.utility';
 import { GregorianCalendar } from './gregorian-calendar.utility';
-import { getWeek } from 'date-fns';
 
 export class Calendar {
   private _calendarId: string;
   private _calendar: BaseCalendar;
   constructor(calendarId: string) {
     this._calendarId = calendarId;
-    // this._calendar = {};
-
     this.getInstance();
   }
 
@@ -91,5 +88,9 @@ export class Calendar {
     const currentMonth = this.getCurrentMonth();
 
     return currentMonth >= 5 && currentMonth <= 10 ? 2 : 1;
+  }
+
+  getCalendarDate(date: Date) {
+    return this._calendar.fromJSDate(date);
   }
 }

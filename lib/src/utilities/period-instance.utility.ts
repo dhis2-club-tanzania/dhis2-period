@@ -65,8 +65,8 @@ export class PeriodInstance {
     //! Omit weekly future period
     if (this._type === 'Weekly') {
       const weeklyInstance = new WeeklyPeriodInstance(this._calendar);
-      const weekPeriods = weeklyInstance.get();
-      return this._periods;
+      const weekPeriods = weeklyInstance.get(this._year);
+      return weeklyInstance.get(this._year);
     }
 
     const previousPeriods = this.omitFuturePeriods(
