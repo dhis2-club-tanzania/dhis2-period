@@ -1,37 +1,59 @@
 import { Calendar } from '../calendar/calendar.utility';
 import { range } from 'lodash';
+import * as moment from 'moment';
 
 export class WeeklyPeriodInstance {
   constructor(private calendar: Calendar) {}
   get(year?: number): any {
-    const todayWeekNo = this.calendar.geCurrentWeek();
-    const currentYear = year ?? this.calendar.getCurrentYear();
+    const todayWeek = {
+      weekNo: this.calendar.geCurrentWeek(),
+      startDate: moment().startOf('isoWeek').format('YYYY-MM-DD'),
+      endDate: moment().endOf('isoWeek').format('YYYY-MM-DD'),
+    };
 
-    return range(1, todayWeekNo + 1).map((weekNo) => {
-      const periodItem = this.getWeekDates(weekNo, currentYear);
-      console.log(periodItem);
-      let startdate = new Date(currentYear, 0, 1 + (weekNo - 1 - 1) * 7);
-      let enddate = new Date(startdate);
-      enddate.setDate(enddate.getDate() + 6);
-      return {
-        id: `${currentYear}W${weekNo}`,
-        week: weekNo,
-        startdate: this.sanitizeDateString(startdate),
-        enddate: this.sanitizeDateString(enddate),
-        name: `Week ${weekNo} ${this.sanitizeDateString(
-          startdate
-        )} - ${this.sanitizeDateString(enddate)}`,
-      };
-    });
+    let periods: any[] = [];
+    for (let weekNo = todayWeek.weekNo; weekNo > 0; weekNo--) {
+      const offset = (todayWeek.weekNo - weekNo) * 7;
+      const date: any = moment(
+        new Date(
+          year ?? this.calendar.getCurrentYear(),
+          this.calendar.getCurrentMonth() - 1,
+          this.calendar.getCurrentDay()
+        )
+      );
+
+      const weekDate = date.subtract(offset, 'days');
+      const startDate = weekDate.startOf('isoWeek').format('YYYY-MM-DD');
+      const endDate = weekDate.endOf('isoWeek').format('YYYY-MM-DD');
+
+      periods = [
+        ...periods,
+        {
+          id: `${weekDate.format('YYYY')}W${weekNo}`,
+          week: weekNo,
+          startDate,
+          endDate,
+          name: `Week ${weekNo} - ${startDate} - ${endDate}`,
+        },
+      ];
+    }
+
+    console.log(JSON.stringify(periods));
+
+    return periods;
   }
 
   getWeekDates(weekNumber: number, year: number) {
-    const firstDayOfYear = new Date(year, 0, 1);
+    const firstDayOfYear = new Date(year, 0, 1 + (weekNumber - 2) * 7);
+    // const daysToFirstDayOfWeek =
+    //   (weekNumber - 1) * 7 - firstDayOfYear.getDay() + 1;
     const daysToFirstDayOfWeek =
-      (weekNumber - 1) * 7 - firstDayOfYear.getDay() + 1;
+      (weekNumber - 1) * 7 - ((firstDayOfYear.getDay() + 6) % 7) + 1;
+    // console.log(firstDayOfYear);
     const startDate = new Date(year, 0, daysToFirstDayOfWeek);
 
     const endDate = new Date(startDate);
+
     endDate.setDate(startDate.getDate() + 6);
 
     return {

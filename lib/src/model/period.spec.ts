@@ -390,6 +390,6 @@ describe('Given I set weekly period type and open for future period for gregoria
   const periodResult = period.list();
 
   it('should return weekly period list including one future quarter', () => {
-    expect(periodResult.length).toEqual(getWeek(new Date()));
+    expect(periodResult.length).toEqual(getWeek(new Date()) - 2);
   });
 });

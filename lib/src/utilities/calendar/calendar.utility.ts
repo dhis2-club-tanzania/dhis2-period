@@ -74,12 +74,10 @@ export class Calendar {
   }
 
   geCurrentWeek(): number {
-    return getWeek(
-      new Date(
-        this.getCurrentYear(),
-        this.getCurrentMonth() - 1,
-        this.getCurrentDay()
-      )
+    return this._calendar.weekOfYear(
+      this.getCurrentYear(),
+      this.getCurrentMonth(),
+      this.getCurrentDay()
     );
   }
 

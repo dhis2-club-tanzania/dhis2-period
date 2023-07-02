@@ -207,6 +207,13 @@ export abstract class BaseCalendar {
     return this.leapYear(date) ? 366 : 365;
   }
 
+  weekOfYear(year: number, month: number, day: any) {
+    const date = this.newDate(year, month, day);
+
+    date.add(4 - (date.dayOfWeek() || 7), 'd');
+    return Math.floor((date.dayOfYear() - 1) / 7) + 1;
+  }
+
   daysInMonth(a: any, b?: any) {
     return 30;
   }
