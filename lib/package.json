@@ -1,6 +1,6 @@
 {
   "name": "@iapps/period-utilities",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dhis2-club-tanzania/dhis2-period.git"
@@ -12,6 +12,8 @@
   },
   "homepage": "https://github.com/dhis2-club-tanzania/dhis2-period#readme",
   "peerDependencies": {
-    "lodash": "^4.17.15"
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
   }
 }
