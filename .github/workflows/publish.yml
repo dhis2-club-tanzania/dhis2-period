@@ -1,4 +1,4 @@
-name: Test and Publish 🚀
+name: Publish 🚀
 
 on:
   pull_request:
