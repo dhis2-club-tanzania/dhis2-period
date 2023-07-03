@@ -1,13 +1,12 @@
+import { BaseCalendar } from './base-calendar.utility';
 import { EthiopianCalendar } from './ethiopian-calendar.utility';
 import { GregorianCalendar } from './gregorian-calendar.utility';
 
 export class Calendar {
   private _calendarId: string;
-  private _calendar: any;
+  private _calendar: BaseCalendar;
   constructor(calendarId: string) {
     this._calendarId = calendarId;
-    this._calendar = {};
-
     this.getInstance();
   }
 
@@ -71,6 +70,14 @@ export class Calendar {
     return Math.ceil(this.getCurrentMonth() / 6);
   }
 
+  geCurrentWeek(): number {
+    return this._calendar.weekOfYear(
+      this.getCurrentYear(),
+      this.getCurrentMonth(),
+      this.getCurrentDay()
+    );
+  }
+
   getCurrentSixMonthApril() {
     const currentMonth = this.getCurrentMonth();
 
@@ -81,5 +88,9 @@ export class Calendar {
     const currentMonth = this.getCurrentMonth();
 
     return currentMonth >= 5 && currentMonth <= 10 ? 2 : 1;
+  }
+
+  getCalendarDate(date: Date) {
+    return this._calendar.fromJSDate(date);
   }
 }

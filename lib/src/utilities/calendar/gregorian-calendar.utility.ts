@@ -70,9 +70,9 @@ export class GregorianCalendar extends BaseCalendar {
     const date = this.newDate(year, month, day);
 
     date.add(4 - (date.dayOfWeek() || 7), 'd');
-    console.log(Math.floor((date.dayOfYear() - 1) / 7) + 1);
     return Math.floor((date.dayOfYear() - 1) / 7) + 1;
   }
+
   daysInMonth(a: any, b: any) {
     const c = this._validate(a, b, this._minDay, this._invalids.invalidMonth);
 

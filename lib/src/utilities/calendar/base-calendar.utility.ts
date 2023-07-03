@@ -1,6 +1,6 @@
 import { CalendarDate } from './calendar-date.utility';
 
-export class BaseCalendar {
+export abstract class BaseCalendar {
   _validateLevel: number;
   _name: string;
   _hasYearZero: boolean;
@@ -79,6 +79,9 @@ export class BaseCalendar {
     this._validateLevel--;
     return valid;
   }
+
+  abstract monthNames(): string[];
+  abstract quarterMonthOffset(): number;
 
   newDate(yearOrDate: any, month: number, day: number): CalendarDate {
     if (!yearOrDate) {
@@ -202,6 +205,13 @@ export class BaseCalendar {
     );
 
     return this.leapYear(date) ? 366 : 365;
+  }
+
+  weekOfYear(year: number, month: number, day: any) {
+    const date = this.newDate(year, month, day);
+
+    date.add(4 - (date.dayOfWeek() || 7), 'd');
+    return Math.floor((date.dayOfYear() - 1) / 7) + 1;
   }
 
   daysInMonth(a: any, b?: any) {

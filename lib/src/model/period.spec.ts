@@ -2,6 +2,7 @@ import { Period } from './period';
 import { PeriodSortOrder } from '../constants/period.constant';
 import { PeriodInterface } from '../interfaces/period.interface';
 import { PeriodTypeEnum } from '../constants/period-types.constant';
+import { getWeek } from 'date-fns';
 
 describe('Given and instance of period class', () => {
   const period = new Period();
@@ -243,6 +244,7 @@ describe('Given I set quarterly period type for gregorian calendar', () => {
   period
     .setType('Quarterly')
     .setCalendar('gregorian')
+    .setYear(2022)
     .setPreferences({
       openFuturePeriods: 1,
       childrenPeriodSortOrder: PeriodSortOrder.ASCENDING,
@@ -372,5 +374,32 @@ describe('Given I set weekly period type for gregorian calendar', () => {
 
   it('should return weekly period list for the current month', () => {
     expect(periodResult.length > 0).toEqual(true);
+  });
+});
+
+describe('Given I set weekly period type and open for future period for gregorian calendar', () => {
+  const period = new Period();
+  period
+    .setType('Weekly')
+    .setCalendar('gregorian')
+    .setPreferences({
+      openFuturePeriods: 1,
+      childrenPeriodSortOrder: PeriodSortOrder.ASCENDING,
+    })
+    .get();
+  const periodResult = period.list();
+
+  it('should return weekly period list including one future week', () => {
+    expect(periodResult.length).toEqual(getWeek(new Date()));
+  });
+});
+
+describe('Given I set weekly period type for a specific year for gregorian calendar', () => {
+  const period = new Period();
+  period.setType('Weekly').setCalendar('gregorian').setYear(2021).get();
+  const periodResult = period.list();
+
+  it('should return weekly period list for the set year', () => {
+    expect(periodResult.length).toEqual(52);
   });
 });
