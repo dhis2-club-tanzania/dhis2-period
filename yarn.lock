@@ -1206,10 +1206,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.171":
-  version: 4.14.188
-  resolution: "@types/lodash@npm:4.14.188"
-  checksum: 89c32f0a18e0da6ae914b430e76b3d0451c4c85b9c838b440c0c9a8d4966c8e2a76dbb30964c7126402856b2997ec56a8c36d8d6461ec14387689ec37594f09f
+"@types/lodash@npm:^4.14.195":
+  version: 4.14.195
+  resolution: "@types/lodash@npm:4.14.195"
+  checksum: 39b75ca635b3fa943d17d3d3aabc750babe4c8212485a4df166fe0516e39288e14b0c60afc6e21913cc0e5a84734633c71e617e2bd14eaa1cf51b8d7799c432e
   languageName: node
   linkType: hard
 
@@ -5811,7 +5811,7 @@ __metadata:
   resolution: "period-utilities@workspace:."
   dependencies:
     "@types/jest": ^26.0.24
-    "@types/lodash": ^4.14.171
+    "@types/lodash": ^4.14.195
     clean-webpack-plugin: ^3.0.0
     commitizen: ^4.2.4
     copy-webpack-plugin: ^11.0.0
