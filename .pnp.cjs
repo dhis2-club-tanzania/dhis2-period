@@ -28,7 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@types/jest", "npm:29.5.2"],\
+            ["@types/jest", "npm:29.5.3"],\
             ["@types/lodash", "npm:4.14.195"],\
             ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
             ["commitizen", "npm:4.2.5"],\
@@ -1742,10 +1742,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/jest", [\
-        ["npm:29.5.2", {\
-          "packageLocation": "./.yarn/cache/@types-jest-npm-29.5.2-1a72e55a50-7d205599ea.zip/node_modules/@types/jest/",\
+        ["npm:29.5.3", {\
+          "packageLocation": "./.yarn/cache/@types-jest-npm-29.5.3-8fc40e94bc-e36bb92e0b.zip/node_modules/@types/jest/",\
           "packageDependencies": [\
-            ["@types/jest", "npm:29.5.2"],\
+            ["@types/jest", "npm:29.5.3"],\
             ["expect", "npm:29.6.0"],\
             ["pretty-format", "npm:29.6.0"]\
           ],\
@@ -7252,7 +7252,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["period-utilities", "workspace:."],\
-            ["@types/jest", "npm:29.5.2"],\
+            ["@types/jest", "npm:29.5.3"],\
             ["@types/lodash", "npm:4.14.195"],\
             ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
             ["commitizen", "npm:4.2.5"],\
@@ -8635,7 +8635,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel-jest", null],\
             ["@types/babel__core", null],\
             ["@types/esbuild", null],\
-            ["@types/jest", "npm:29.5.2"],\
+            ["@types/jest", "npm:29.5.3"],\
             ["@types/jest__types", null],\
             ["@types/typescript", null],\
             ["babel-jest", null],\
