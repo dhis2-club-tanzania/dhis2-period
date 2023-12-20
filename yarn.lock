@@ -2749,10 +2749,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "date-fns@npm:3.0.0"
-  checksum: 679e07eb4625afa25ced624f471e90663131f053b35f9b73cb5b863829f717f887305801f05cfd1dd53c029e598289b52792f053b8a1c7082885c7e1bdb309df
+"date-fns@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "date-fns@npm:3.0.1"
+  checksum: d16cdde537eb3d2cc3b51cbfa48d5bcda6622472b486f37457ef96ff52798f488f514fb8d9268c5f256202cac76413e2c1a404c142e9f0a1f3b1c8461a218ad4
   languageName: node
   linkType: hard
 
@@ -5955,7 +5955,7 @@ __metadata:
     commitizen: ^4.2.4
     copy-webpack-plugin: ^11.0.0
     cz-conventional-changelog: ^3.3.0
-    date-fns: ^3.0.0
+    date-fns: ^3.0.1
     docdash: ^2.0.2
     husky: ^7.0.4
     jest: ^29.7.0
