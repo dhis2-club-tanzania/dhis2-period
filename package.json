@@ -46,7 +46,7 @@
   "dependencies": {
     "date-fns": "^3.0.6",
     "lodash": "^4.17.21",
-    "moment": "^2.29.4"
+    "moment": "^2.30.0"
   },
   "config": {
     "commitizen": {
