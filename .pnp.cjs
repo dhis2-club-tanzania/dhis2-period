@@ -32,7 +32,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash", "npm:4.14.202"],\
             ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
             ["commitizen", "npm:4.2.5"],\
-            ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.1"],\
+            ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
             ["date-fns", "npm:3.2.0"],\
             ["docdash", "npm:2.0.2"],\
@@ -3554,17 +3554,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["copy-webpack-plugin", [\
-        ["npm:12.0.1", {\
-          "packageLocation": "./.yarn/cache/copy-webpack-plugin-npm-12.0.1-11e610c75b-f43948ef04.zip/node_modules/copy-webpack-plugin/",\
+        ["npm:12.0.2", {\
+          "packageLocation": "./.yarn/cache/copy-webpack-plugin-npm-12.0.2-174fbd55fc-9812773533.zip/node_modules/copy-webpack-plugin/",\
           "packageDependencies": [\
-            ["copy-webpack-plugin", "npm:12.0.1"]\
+            ["copy-webpack-plugin", "npm:12.0.2"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.1", {\
-          "packageLocation": "./.yarn/__virtual__/copy-webpack-plugin-virtual-f38ce23adb/0/cache/copy-webpack-plugin-npm-12.0.1-11e610c75b-f43948ef04.zip/node_modules/copy-webpack-plugin/",\
+        ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/copy-webpack-plugin-virtual-5a67699919/0/cache/copy-webpack-plugin-npm-12.0.2-174fbd55fc-9812773533.zip/node_modules/copy-webpack-plugin/",\
           "packageDependencies": [\
-            ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.1"],\
+            ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
             ["@types/webpack", null],\
             ["fast-glob", "npm:3.3.2"],\
             ["glob-parent", "npm:6.0.2"],\
@@ -7368,7 +7368,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash", "npm:4.14.202"],\
             ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
             ["commitizen", "npm:4.2.5"],\
-            ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.1"],\
+            ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
             ["date-fns", "npm:3.2.0"],\
             ["docdash", "npm:2.0.2"],\
