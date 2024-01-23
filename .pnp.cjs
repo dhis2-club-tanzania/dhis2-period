@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
             ["lodash", "npm:4.17.21"],\
             ["moment", "npm:2.30.1"],\
-            ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.0"],\
+            ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.2"],\
             ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.1"],\
             ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.25.7"],\
             ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
@@ -7376,7 +7376,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
             ["lodash", "npm:4.17.21"],\
             ["moment", "npm:2.30.1"],\
-            ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.0"],\
+            ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.2"],\
             ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.1"],\
             ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.25.7"],\
             ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
@@ -8741,17 +8741,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["ts-jest", [\
-        ["npm:29.1.0", {\
-          "packageLocation": "./.yarn/cache/ts-jest-npm-29.1.0-ede119702b-535dc42ad5.zip/node_modules/ts-jest/",\
+        ["npm:29.1.2", {\
+          "packageLocation": "./.yarn/cache/ts-jest-npm-29.1.2-22ab85b861-a0ce0affc1.zip/node_modules/ts-jest/",\
           "packageDependencies": [\
-            ["ts-jest", "npm:29.1.0"]\
+            ["ts-jest", "npm:29.1.2"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.0", {\
-          "packageLocation": "./.yarn/__virtual__/ts-jest-virtual-37d0b5843a/0/cache/ts-jest-npm-29.1.0-ede119702b-535dc42ad5.zip/node_modules/ts-jest/",\
+        ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.2", {\
+          "packageLocation": "./.yarn/__virtual__/ts-jest-virtual-06e9ef9674/0/cache/ts-jest-npm-29.1.2-22ab85b861-a0ce0affc1.zip/node_modules/ts-jest/",\
           "packageDependencies": [\
-            ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.0"],\
+            ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.1.2"],\
             ["@babel/core", null],\
             ["@jest/types", null],\
             ["@types/babel-jest", null],\
@@ -8769,7 +8769,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["json5", "npm:2.2.3"],\
             ["lodash.memoize", "npm:4.1.2"],\
             ["make-error", "npm:1.3.6"],\
-            ["semver", "npm:7.3.8"],\
+            ["semver", "npm:7.5.3"],\
             ["typescript", "patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
             ["yargs-parser", "npm:21.1.1"]\
           ],\
