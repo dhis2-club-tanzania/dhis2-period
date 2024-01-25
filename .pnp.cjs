@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cz-conventional-changelog", "npm:3.3.0"],\
             ["date-fns", "npm:3.3.1"],\
             ["docdash", "npm:2.0.2"],\
-            ["husky", "npm:7.0.4"],\
+            ["husky", "npm:9.0.1"],\
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
             ["lodash", "npm:4.17.21"],\
             ["moment", "npm:2.30.1"],\
@@ -5118,10 +5118,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["husky", [\
-        ["npm:7.0.4", {\
-          "packageLocation": "./.yarn/cache/husky-npm-7.0.4-917ba035c6-c6ec4af63d.zip/node_modules/husky/",\
+        ["npm:9.0.1", {\
+          "packageLocation": "./.yarn/cache/husky-npm-9.0.1-69513b18c0-8f28488e59.zip/node_modules/husky/",\
           "packageDependencies": [\
-            ["husky", "npm:7.0.4"]\
+            ["husky", "npm:9.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7372,7 +7372,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cz-conventional-changelog", "npm:3.3.0"],\
             ["date-fns", "npm:3.3.1"],\
             ["docdash", "npm:2.0.2"],\
-            ["husky", "npm:7.0.4"],\
+            ["husky", "npm:9.0.1"],\
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
             ["lodash", "npm:4.17.21"],\
             ["moment", "npm:2.30.1"],\
