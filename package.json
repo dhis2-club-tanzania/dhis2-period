@@ -32,7 +32,7 @@
     "docdash": "^2.0.2",
     "husky": "^9.1.5",
     "jest": "^29.7.0",
-    "ts-jest": "^29.2.4",
+    "ts-jest": "^29.2.5",
     "ts-loader": "^9.5.1",
     "typedoc": "^0.26.6",
     "typedoc-webpack-plugin": "^1.1.4",
