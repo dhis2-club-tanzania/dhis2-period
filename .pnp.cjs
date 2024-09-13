@@ -26,7 +26,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@types/jest", "npm:29.5.12"],\
+          ["@types/jest", "npm:29.5.13"],\
           ["@types/lodash", "npm:4.17.7"],\
           ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
           ["commitizen", "npm:4.2.5"],\
@@ -1812,10 +1812,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/jest", [\
-      ["npm:29.5.12", {\
-        "packageLocation": "../../.yarn/berry/cache/@types-jest-npm-29.5.12-6459b9d012-10c0.zip/node_modules/@types/jest/",\
+      ["npm:29.5.13", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-jest-npm-29.5.13-b43d0e7497-10c0.zip/node_modules/@types/jest/",\
         "packageDependencies": [\
-          ["@types/jest", "npm:29.5.12"],\
+          ["@types/jest", "npm:29.5.13"],\
           ["expect", "npm:29.6.0"],\
           ["pretty-format", "npm:29.6.0"]\
         ],\
@@ -7662,7 +7662,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["period-utilities", "workspace:."],\
-          ["@types/jest", "npm:29.5.12"],\
+          ["@types/jest", "npm:29.5.13"],\
           ["@types/lodash", "npm:4.17.7"],\
           ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
           ["commitizen", "npm:4.2.5"],\
@@ -9103,7 +9103,7 @@ const RAW_RUNTIME_STATE =
           ["@types/babel-jest", null],\
           ["@types/babel__core", null],\
           ["@types/esbuild", null],\
-          ["@types/jest", "npm:29.5.12"],\
+          ["@types/jest", "npm:29.5.13"],\
           ["@types/jest__transform", null],\
           ["@types/jest__types", null],\
           ["@types/typescript", null],\
