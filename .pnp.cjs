@@ -32,7 +32,7 @@ const RAW_RUNTIME_STATE =
           ["commitizen", "npm:4.2.5"],\
           ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
-          ["date-fns", "npm:3.6.0"],\
+          ["date-fns", "npm:4.0.0"],\
           ["docdash", "npm:2.0.2"],\
           ["husky", "npm:9.1.6"],\
           ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
@@ -3839,10 +3839,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["date-fns", [\
-      ["npm:3.6.0", {\
-        "packageLocation": "../../.yarn/berry/cache/date-fns-npm-3.6.0-e59d980978-10c0.zip/node_modules/date-fns/",\
+      ["npm:4.0.0", {\
+        "packageLocation": "../../.yarn/berry/cache/date-fns-npm-4.0.0-ce4006616f-10c0.zip/node_modules/date-fns/",\
         "packageDependencies": [\
-          ["date-fns", "npm:3.6.0"]\
+          ["date-fns", "npm:4.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7668,7 +7668,7 @@ const RAW_RUNTIME_STATE =
           ["commitizen", "npm:4.2.5"],\
           ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
-          ["date-fns", "npm:3.6.0"],\
+          ["date-fns", "npm:4.0.0"],\
           ["docdash", "npm:2.0.2"],\
           ["husky", "npm:9.1.6"],\
           ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
