@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["moment", "npm:2.30.1"],\
             ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.5"],\
             ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.1"],\
-            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.1"],\
+            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.2"],\
             ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
             ["typescript", "patch:typescript@npm%3A5.5.4#~builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
             ["uglifyjs-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:2.2.0"],\
@@ -945,12 +945,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@gerrit0/mini-shiki", [\
-        ["npm:1.23.2", {\
-          "packageLocation": "./.yarn/cache/@gerrit0-mini-shiki-npm-1.23.2-276872a6dd-3c64cbcd9a.zip/node_modules/@gerrit0/mini-shiki/",\
+        ["npm:1.24.1", {\
+          "packageLocation": "./.yarn/cache/@gerrit0-mini-shiki-npm-1.24.1-57aa0dca2a-eb255e446c.zip/node_modules/@gerrit0/mini-shiki/",\
           "packageDependencies": [\
-            ["@gerrit0/mini-shiki", "npm:1.23.2"],\
-            ["@shikijs/engine-oniguruma", "npm:1.23.1"],\
-            ["@shikijs/types", "npm:1.23.1"],\
+            ["@gerrit0/mini-shiki", "npm:1.24.1"],\
+            ["@shikijs/engine-oniguruma", "npm:1.24.0"],\
+            ["@shikijs/types", "npm:1.24.0"],\
             ["@shikijs/vscode-textmate", "npm:9.3.0"]\
           ],\
           "linkType": "HARD"\
@@ -1494,21 +1494,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@shikijs/engine-oniguruma", [\
-        ["npm:1.23.1", {\
-          "packageLocation": "./.yarn/cache/@shikijs-engine-oniguruma-npm-1.23.1-cf2ea71346-72728bd944.zip/node_modules/@shikijs/engine-oniguruma/",\
+        ["npm:1.24.0", {\
+          "packageLocation": "./.yarn/cache/@shikijs-engine-oniguruma-npm-1.24.0-ef6269a480-9963378863.zip/node_modules/@shikijs/engine-oniguruma/",\
           "packageDependencies": [\
-            ["@shikijs/engine-oniguruma", "npm:1.23.1"],\
-            ["@shikijs/types", "npm:1.23.1"],\
+            ["@shikijs/engine-oniguruma", "npm:1.24.0"],\
+            ["@shikijs/types", "npm:1.24.0"],\
             ["@shikijs/vscode-textmate", "npm:9.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@shikijs/types", [\
-        ["npm:1.23.1", {\
-          "packageLocation": "./.yarn/cache/@shikijs-types-npm-1.23.1-7ddb646994-f0e44d56c1.zip/node_modules/@shikijs/types/",\
+        ["npm:1.24.0", {\
+          "packageLocation": "./.yarn/cache/@shikijs-types-npm-1.24.0-e3e56d4818-2045f9eae2.zip/node_modules/@shikijs/types/",\
           "packageDependencies": [\
-            ["@shikijs/types", "npm:1.23.1"],\
+            ["@shikijs/types", "npm:1.24.0"],\
             ["@shikijs/vscode-textmate", "npm:9.3.0"],\
             ["@types/hast", "npm:3.0.4"]\
           ],\
@@ -7772,7 +7772,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["moment", "npm:2.30.1"],\
             ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.5"],\
             ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.1"],\
-            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.1"],\
+            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.2"],\
             ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
             ["typescript", "patch:typescript@npm%3A5.5.4#~builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
             ["uglifyjs-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:2.2.0"],\
@@ -9355,18 +9355,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["typedoc", [\
-        ["npm:0.27.1", {\
-          "packageLocation": "./.yarn/cache/typedoc-npm-0.27.1-d96b7b3ba3-23bb2bd0aa.zip/node_modules/typedoc/",\
+        ["npm:0.27.2", {\
+          "packageLocation": "./.yarn/cache/typedoc-npm-0.27.2-3bb83180a9-7a21db0241.zip/node_modules/typedoc/",\
           "packageDependencies": [\
-            ["typedoc", "npm:0.27.1"]\
+            ["typedoc", "npm:0.27.2"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.1", {\
-          "packageLocation": "./.yarn/__virtual__/typedoc-virtual-a1db776db5/0/cache/typedoc-npm-0.27.1-d96b7b3ba3-23bb2bd0aa.zip/node_modules/typedoc/",\
+        ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.2", {\
+          "packageLocation": "./.yarn/__virtual__/typedoc-virtual-fa11c73ae4/0/cache/typedoc-npm-0.27.2-3bb83180a9-7a21db0241.zip/node_modules/typedoc/",\
           "packageDependencies": [\
-            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.1"],\
-            ["@gerrit0/mini-shiki", "npm:1.23.2"],\
+            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.2"],\
+            ["@gerrit0/mini-shiki", "npm:1.24.1"],\
             ["@types/typescript", null],\
             ["lunr", "npm:2.3.9"],\
             ["markdown-it", "npm:14.1.0"],\
@@ -9396,7 +9396,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/typedoc", null],\
             ["lodash.clone", "npm:4.5.0"],\
             ["lodash.merge", "npm:4.6.2"],\
-            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.1"]\
+            ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.2"]\
           ],\
           "packagePeers": [\
             "@types/typedoc",\
