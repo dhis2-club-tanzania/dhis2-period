@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@types/jest", "npm:29.5.14"],\
-          ["@types/lodash", "npm:4.17.14"],\
+          ["@types/lodash", "npm:4.17.15"],\
           ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
           ["commitizen", "npm:4.3.1"],\
           ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
@@ -1885,10 +1885,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/lodash", [\
-      ["npm:4.17.14", {\
-        "packageLocation": "../../.yarn/berry/cache/@types-lodash-npm-4.17.14-6b38705727-10c0.zip/node_modules/@types/lodash/",\
+      ["npm:4.17.15", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-lodash-npm-4.17.15-0a7d38c4ec-10c0.zip/node_modules/@types/lodash/",\
         "packageDependencies": [\
-          ["@types/lodash", "npm:4.17.14"]\
+          ["@types/lodash", "npm:4.17.15"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7893,7 +7893,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["period-utilities", "workspace:."],\
           ["@types/jest", "npm:29.5.14"],\
-          ["@types/lodash", "npm:4.17.14"],\
+          ["@types/lodash", "npm:4.17.15"],\
           ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
           ["commitizen", "npm:4.3.1"],\
           ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:12.0.2"],\
