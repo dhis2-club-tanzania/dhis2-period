@@ -41,7 +41,7 @@ const RAW_RUNTIME_STATE =
           ["moment", "npm:2.30.1"],\
           ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.6"],\
           ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.2"],\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.9"],\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"],\
           ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["uglifyjs-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:2.2.0"],\
@@ -944,13 +944,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@gerrit0/mini-shiki", [\
-      ["npm:1.24.1", {\
-        "packageLocation": "../../.yarn/berry/cache/@gerrit0-mini-shiki-npm-1.24.1-57aa0dca2a-10c0.zip/node_modules/@gerrit0/mini-shiki/",\
+      ["npm:3.2.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@gerrit0-mini-shiki-npm-3.2.1-ae2cd589e0-10c0.zip/node_modules/@gerrit0/mini-shiki/",\
         "packageDependencies": [\
-          ["@gerrit0/mini-shiki", "npm:1.24.1"],\
-          ["@shikijs/engine-oniguruma", "npm:1.24.0"],\
-          ["@shikijs/types", "npm:1.24.0"],\
-          ["@shikijs/vscode-textmate", "npm:9.3.0"]\
+          ["@gerrit0/mini-shiki", "npm:3.2.1"],\
+          ["@shikijs/engine-oniguruma", "npm:3.2.1"],\
+          ["@shikijs/types", "npm:3.2.1"],\
+          ["@shikijs/vscode-textmate", "npm:10.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1462,32 +1462,32 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@shikijs/engine-oniguruma", [\
-      ["npm:1.24.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@shikijs-engine-oniguruma-npm-1.24.0-ef6269a480-10c0.zip/node_modules/@shikijs/engine-oniguruma/",\
+      ["npm:3.2.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@shikijs-engine-oniguruma-npm-3.2.1-a1380c3b2b-10c0.zip/node_modules/@shikijs/engine-oniguruma/",\
         "packageDependencies": [\
-          ["@shikijs/engine-oniguruma", "npm:1.24.0"],\
-          ["@shikijs/types", "npm:1.24.0"],\
-          ["@shikijs/vscode-textmate", "npm:9.3.0"]\
+          ["@shikijs/engine-oniguruma", "npm:3.2.1"],\
+          ["@shikijs/types", "npm:3.2.1"],\
+          ["@shikijs/vscode-textmate", "npm:10.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@shikijs/types", [\
-      ["npm:1.24.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@shikijs-types-npm-1.24.0-e3e56d4818-10c0.zip/node_modules/@shikijs/types/",\
+      ["npm:3.2.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@shikijs-types-npm-3.2.1-a0cf0260d8-10c0.zip/node_modules/@shikijs/types/",\
         "packageDependencies": [\
-          ["@shikijs/types", "npm:1.24.0"],\
-          ["@shikijs/vscode-textmate", "npm:9.3.0"],\
+          ["@shikijs/types", "npm:3.2.1"],\
+          ["@shikijs/vscode-textmate", "npm:10.0.2"],\
           ["@types/hast", "npm:3.0.4"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@shikijs/vscode-textmate", [\
-      ["npm:9.3.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@shikijs-vscode-textmate-npm-9.3.0-baa16ec895-10c0.zip/node_modules/@shikijs/vscode-textmate/",\
+      ["npm:10.0.2", {\
+        "packageLocation": "../../.yarn/berry/cache/@shikijs-vscode-textmate-npm-10.0.2-c80a8c15da-10c0.zip/node_modules/@shikijs/vscode-textmate/",\
         "packageDependencies": [\
-          ["@shikijs/vscode-textmate", "npm:9.3.0"]\
+          ["@shikijs/vscode-textmate", "npm:10.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7825,7 +7825,7 @@ const RAW_RUNTIME_STATE =
           ["moment", "npm:2.30.1"],\
           ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.6"],\
           ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.2"],\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.9"],\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"],\
           ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["uglifyjs-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:2.2.0"],\
@@ -9429,24 +9429,24 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typedoc", [\
-      ["npm:0.27.9", {\
-        "packageLocation": "../../.yarn/berry/cache/typedoc-npm-0.27.9-ab3b76868e-10c0.zip/node_modules/typedoc/",\
+      ["npm:0.28.0", {\
+        "packageLocation": "../../.yarn/berry/cache/typedoc-npm-0.28.0-64c69f6b02-10c0.zip/node_modules/typedoc/",\
         "packageDependencies": [\
-          ["typedoc", "npm:0.27.9"]\
+          ["typedoc", "npm:0.28.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.9", {\
-        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-581053c1f5/3/.yarn/berry/cache/typedoc-npm-0.27.9-ab3b76868e-10c0.zip/node_modules/typedoc/",\
+      ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0", {\
+        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-7f9c752edd/3/.yarn/berry/cache/typedoc-npm-0.28.0-64c69f6b02-10c0.zip/node_modules/typedoc/",\
         "packageDependencies": [\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.9"],\
-          ["@gerrit0/mini-shiki", "npm:1.24.1"],\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"],\
+          ["@gerrit0/mini-shiki", "npm:3.2.1"],\
           ["@types/typescript", null],\
           ["lunr", "npm:2.3.9"],\
           ["markdown-it", "npm:14.1.0"],\
           ["minimatch", "npm:9.0.5"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
-          ["yaml", "npm:2.6.1"]\
+          ["yaml", "npm:2.7.0"]\
         ],\
         "packagePeers": [\
           "@types/typescript",\
@@ -9470,7 +9470,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typedoc", null],\
           ["lodash.clone", "npm:4.5.0"],\
           ["lodash.merge", "npm:4.6.2"],\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.27.9"]\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"]\
         ],\
         "packagePeers": [\
           "@types/typedoc",\
@@ -10145,10 +10145,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:2.6.1", {\
-        "packageLocation": "../../.yarn/berry/cache/yaml-npm-2.6.1-eb747069e9-10c0.zip/node_modules/yaml/",\
+      ["npm:2.7.0", {\
+        "packageLocation": "../../.yarn/berry/cache/yaml-npm-2.7.0-bb348b356b-10c0.zip/node_modules/yaml/",\
         "packageDependencies": [\
-          ["yaml", "npm:2.6.1"]\
+          ["yaml", "npm:2.7.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10622,7 +10622,7 @@ async function copyImpl(prelayout, postlayout, destinationFs, destination, sourc
 async function maybeLStat(baseFs, p) {
   try {
     return await baseFs.lstatPromise(p);
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -10881,7 +10881,7 @@ class CustomStatWatcher extends events.EventEmitter {
   stat() {
     try {
       return this.fakeFs.statSync(this.path, { bigint: this.bigint });
-    } catch (error) {
+    } catch {
       const statInstance = this.bigint ? new BigIntStatsEntry() : new StatEntry();
       return clearStats(statInstance);
     }
@@ -11207,7 +11207,7 @@ class FakeFS {
     let current = Buffer.alloc(0);
     try {
       current = await this.readFilePromise(p);
-    } catch (error) {
+    } catch {
     }
     if (Buffer.compare(current, content) === 0)
       return;
@@ -11217,7 +11217,7 @@ class FakeFS {
     let current = ``;
     try {
       current = await this.readFilePromise(p, `utf8`);
-    } catch (error) {
+    } catch {
     }
     const normalizedContent = automaticNewlines ? normalizeLineEndings(current, content) : content;
     if (current === normalizedContent)
@@ -11235,7 +11235,7 @@ class FakeFS {
     let current = Buffer.alloc(0);
     try {
       current = this.readFileSync(p);
-    } catch (error) {
+    } catch {
     }
     if (Buffer.compare(current, content) === 0)
       return;
@@ -11245,7 +11245,7 @@ class FakeFS {
     let current = ``;
     try {
       current = this.readFileSync(p, `utf8`);
-    } catch (error) {
+    } catch {
     }
     const normalizedContent = automaticNewlines ? normalizeLineEndings(current, content) : content;
     if (current === normalizedContent)
@@ -11285,13 +11285,13 @@ class FakeFS {
       let pid;
       try {
         [pid] = await this.readJsonPromise(lockPath);
-      } catch (error) {
+      } catch {
         return Date.now() - startTime < 500;
       }
       try {
         process.kill(pid, 0);
         return true;
-      } catch (error) {
+      } catch {
         return false;
       }
     };
@@ -11304,7 +11304,7 @@ class FakeFS {
             try {
               await this.unlinkPromise(lockPath);
               continue;
-            } catch (error2) {
+            } catch {
             }
           }
           if (Date.now() - startTime < 60 * 1e3) {
@@ -11324,7 +11324,7 @@ class FakeFS {
       try {
         await this.closePromise(fd);
         await this.unlinkPromise(lockPath);
-      } catch (error) {
+      } catch {
       }
     }
   }
@@ -12474,7 +12474,7 @@ class MountFS extends BasePortableFakeFS {
       let content;
       try {
         content = await sourceFs.readFilePromise(sourceP2);
-      } catch (error) {
+      } catch {
         throw Object.assign(new Error(`EINVAL: invalid argument, copyfile '${sourceP2}' -> '${destP2}'`), { code: `EINVAL` });
       }
       await destFs.writeFilePromise(destP2, content);
@@ -12506,7 +12506,7 @@ class MountFS extends BasePortableFakeFS {
       let content;
       try {
         content = sourceFs.readFileSync(sourceP2);
-      } catch (error) {
+      } catch {
         throw Object.assign(new Error(`EINVAL: invalid argument, copyfile '${sourceP2}' -> '${destP2}'`), { code: `EINVAL` });
       }
       destFs.writeFileSync(destP2, content);
@@ -13421,7 +13421,7 @@ function patchFs(patchedFs, fakeFs) {
     setupFn(patchedFs, `existsSync`, (p) => {
       try {
         return fakeFs.existsSync(p);
-      } catch (error) {
+      } catch {
         return false;
       }
     });
@@ -14782,7 +14782,7 @@ class ZipFS extends BasePortableFakeFS {
     let resolvedP;
     try {
       resolvedP = this.resolveFilename(`stat '${p}'`, p, void 0, false);
-    } catch (error) {
+    } catch {
       return false;
     }
     if (resolvedP === void 0)
@@ -15823,7 +15823,7 @@ Require stack:
         } else {
           resolution = originalFindPath.call(require$$0.Module, request, [path], isMain);
         }
-      } catch (error) {
+      } catch {
         continue;
       }
       if (resolution) {
@@ -15832,18 +15832,20 @@ Require stack:
     }
     return false;
   };
-  const originalExtensionJSFunction = require$$0.Module._extensions[`.js`];
-  require$$0.Module._extensions[`.js`] = function(module, filename) {
-    if (filename.endsWith(`.js`)) {
-      const pkg = readPackageScope(filename);
-      if (pkg && pkg.data?.type === `module`) {
-        const err = ERR_REQUIRE_ESM(filename, module.parent?.filename);
-        Error.captureStackTrace(err);
-        throw err;
+  if (!process.features.require_module) {
+    const originalExtensionJSFunction = require$$0.Module._extensions[`.js`];
+    require$$0.Module._extensions[`.js`] = function(module, filename) {
+      if (filename.endsWith(`.js`)) {
+        const pkg = readPackageScope(filename);
+        if (pkg && pkg.data?.type === `module`) {
+          const err = ERR_REQUIRE_ESM(filename, module.parent?.filename);
+          Error.captureStackTrace(err);
+          throw err;
+        }
       }
-    }
-    originalExtensionJSFunction.call(this, module, filename);
-  };
+      originalExtensionJSFunction.call(this, module, filename);
+    };
+  }
   const originalDlopen = process.dlopen;
   process.dlopen = function(...args) {
     const [module, filename, ...rest] = args;
@@ -16904,7 +16906,7 @@ function makeApi(runtimeState, opts) {
     try {
       candidates.push(unqualifiedPath);
       stat = opts.fakeFs.statSync(unqualifiedPath);
-    } catch (error) {
+    } catch {
     }
     if (stat && !stat.isDirectory())
       return opts.fakeFs.realpathSync(unqualifiedPath);
@@ -16912,7 +16914,7 @@ function makeApi(runtimeState, opts) {
       let pkgJson;
       try {
         pkgJson = JSON.parse(opts.fakeFs.readFileSync(ppath.join(unqualifiedPath, Filename.manifest), `utf8`));
-      } catch (error) {
+      } catch {
       }
       let nextUnqualifiedPath;
       if (pkgJson && pkgJson.main)
