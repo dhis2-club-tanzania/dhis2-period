@@ -41,7 +41,7 @@ const RAW_RUNTIME_STATE =
           ["moment", "npm:2.30.1"],\
           ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.6"],\
           ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.2"],\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"],\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.1"],\
           ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["uglifyjs-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:2.2.0"],\
@@ -7825,7 +7825,7 @@ const RAW_RUNTIME_STATE =
           ["moment", "npm:2.30.1"],\
           ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.6"],\
           ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.2"],\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"],\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.1"],\
           ["typedoc-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:1.1.4"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["uglifyjs-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:2.2.0"],\
@@ -9429,17 +9429,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typedoc", [\
-      ["npm:0.28.0", {\
-        "packageLocation": "../../.yarn/berry/cache/typedoc-npm-0.28.0-64c69f6b02-10c0.zip/node_modules/typedoc/",\
+      ["npm:0.28.1", {\
+        "packageLocation": "../../.yarn/berry/cache/typedoc-npm-0.28.1-b2d1080fa2-10c0.zip/node_modules/typedoc/",\
         "packageDependencies": [\
-          ["typedoc", "npm:0.28.0"]\
+          ["typedoc", "npm:0.28.1"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0", {\
-        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-7f9c752edd/3/.yarn/berry/cache/typedoc-npm-0.28.0-64c69f6b02-10c0.zip/node_modules/typedoc/",\
+      ["virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.1", {\
+        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-b05b053dbc/3/.yarn/berry/cache/typedoc-npm-0.28.1-b2d1080fa2-10c0.zip/node_modules/typedoc/",\
         "packageDependencies": [\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"],\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.1"],\
           ["@gerrit0/mini-shiki", "npm:3.2.1"],\
           ["@types/typescript", null],\
           ["lunr", "npm:2.3.9"],\
@@ -9470,7 +9470,7 @@ const RAW_RUNTIME_STATE =
           ["@types/typedoc", null],\
           ["lodash.clone", "npm:4.5.0"],\
           ["lodash.merge", "npm:4.6.2"],\
-          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.0"]\
+          ["typedoc", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:0.28.1"]\
         ],\
         "packagePeers": [\
           "@types/typedoc",\
