@@ -6485,7 +6485,7 @@ __metadata:
     moment: ^2.30.1
     ts-jest: ^29.2.6
     ts-loader: ^9.5.4
-    typedoc: ^0.28.12
+    typedoc: ^0.28.13
     typedoc-webpack-plugin: ^1.1.4
     typescript: ^5.5.4
     uglifyjs-webpack-plugin: ^2.2.0
@@ -7929,9 +7929,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.28.12":
-  version: 0.28.12
-  resolution: "typedoc@npm:0.28.12"
+"typedoc@npm:^0.28.13":
+  version: 0.28.13
+  resolution: "typedoc@npm:0.28.13"
   dependencies:
     "@gerrit0/mini-shiki": ^3.12.0
     lunr: ^2.3.9
@@ -7942,7 +7942,7 @@ __metadata:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
   bin:
     typedoc: bin/typedoc
-  checksum: b32751ad605c3b75bc26df3d7b9ca722361482d100c0a02649e2060e2ab865130e1d7071dd301d971fed28e998dd610833c80ee98488b009afb557b62f70ebb8
+  checksum: 238b567661d4118eaf1bc61696ce2129dc0f0d4bd9b0928942bdd40ab9165df842143a04bc1fd8c7c1c2a8978ad2b48118f4bfcd753be322476568a8cc27e355
   languageName: node
   linkType: hard
 
