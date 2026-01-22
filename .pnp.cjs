@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["docdash", "npm:2.0.2"],\
             ["husky", "npm:9.1.7"],\
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
-            ["lodash", "npm:4.17.21"],\
+            ["lodash", "npm:4.17.23"],\
             ["moment", "npm:2.30.1"],\
             ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.6"],\
             ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.4"],\
@@ -7088,6 +7088,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.17.23", {\
+          "packageLocation": "./.yarn/cache/lodash-npm-4.17.23-50bdb1c01a-7daad39758.zip/node_modules/lodash/",\
+          "packageDependencies": [\
+            ["lodash", "npm:4.17.23"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["lodash.clone", [\
@@ -8099,7 +8106,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["docdash", "npm:2.0.2"],\
             ["husky", "npm:9.1.7"],\
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
-            ["lodash", "npm:4.17.21"],\
+            ["lodash", "npm:4.17.23"],\
             ["moment", "npm:2.30.1"],\
             ["ts-jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.2.6"],\
             ["ts-loader", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:9.5.4"],\
