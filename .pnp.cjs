@@ -29,7 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@types/jest", "npm:29.5.14"],\
-            ["@types/lodash", "npm:4.17.23"],\
+            ["@types/lodash", "npm:4.17.24"],\
             ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
             ["commitizen", "npm:4.3.1"],\
             ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:13.0.1"],\
@@ -2051,10 +2051,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/lodash", [\
-        ["npm:4.17.23", {\
-          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.17.23-cc83cf40c9-3863864152.zip/node_modules/@types/lodash/",\
+        ["npm:4.17.24", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.17.24-4a04035060-2b25497314.zip/node_modules/@types/lodash/",\
           "packageDependencies": [\
-            ["@types/lodash", "npm:4.17.23"]\
+            ["@types/lodash", "npm:4.17.24"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8097,7 +8097,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["period-utilities", "workspace:."],\
             ["@types/jest", "npm:29.5.14"],\
-            ["@types/lodash", "npm:4.17.23"],\
+            ["@types/lodash", "npm:4.17.24"],\
             ["clean-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:3.0.0"],\
             ["commitizen", "npm:4.3.1"],\
             ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:13.0.1"],\
