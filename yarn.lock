@@ -2384,12 +2384,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"brace-expansion@npm:^5.0.2":
-  version: 5.0.4
-  resolution: "brace-expansion@npm:5.0.4"
+"brace-expansion@npm:^5.0.5":
+  version: 5.0.5
+  resolution: "brace-expansion@npm:5.0.5"
   dependencies:
     balanced-match: ^4.0.2
-  checksum: ded86c0f0b138734110d67437fee52c1f97bc19175644788b1d71afec2d87d405cf05424ce428f88ae3abe8e09e13ee55f2675534b38076ef70e1e583ed75686
+  checksum: 4481b7ffa467b34c14e258167dbd8d9485a2d31d03060e8e8b38142dcde32cdc89c8f55b04d3ae7aae9304fa7eac1dfafd602787cf09c019cc45de3bb6950ffc
   languageName: node
   linkType: hard
 
@@ -5982,12 +5982,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^10.2.4":
-  version: 10.2.4
-  resolution: "minimatch@npm:10.2.4"
+"minimatch@npm:^10.2.5":
+  version: 10.2.5
+  resolution: "minimatch@npm:10.2.5"
   dependencies:
-    brace-expansion: ^5.0.2
-  checksum: 56dce6b04c6b30b500d81d7a29822c108b7d58c46696ec7332d04a2bd104a5cb69e5c7ce93e1783dc66d61400d831e6e226ca101ac23665aff32ca303619dc3d
+    brace-expansion: ^5.0.5
+  checksum: 000423875fecbc7da1d74bf63c9081363a71291ef2588c376c45647ac004582cb5bc8cc09ef84420b26bfb490f4d0818d328e78569c6228e20d90271283f73ba
   languageName: node
   linkType: hard
 
@@ -6615,7 +6615,7 @@ __metadata:
     moment: ^2.30.1
     ts-jest: ^29.2.6
     ts-loader: ^9.5.7
-    typedoc: ^0.28.18
+    typedoc: ^0.28.19
     typedoc-webpack-plugin: ^1.1.4
     typescript: ^5.5.4
     uglifyjs-webpack-plugin: ^2.2.0
@@ -8114,20 +8114,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.28.18":
-  version: 0.28.18
-  resolution: "typedoc@npm:0.28.18"
+"typedoc@npm:^0.28.19":
+  version: 0.28.19
+  resolution: "typedoc@npm:0.28.19"
   dependencies:
     "@gerrit0/mini-shiki": ^3.23.0
     lunr: ^2.3.9
     markdown-it: ^14.1.1
-    minimatch: ^10.2.4
-    yaml: ^2.8.2
+    minimatch: ^10.2.5
+    yaml: ^2.8.3
   peerDependencies:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x || 6.0.x
   bin:
     typedoc: bin/typedoc
-  checksum: 13ae9d2040a56cfb788b481ceba3d8ef6cc9ab6f07f1b6cadd911dec2f6e871560618becb4620e931c24faeb07d8b326d97733a5618b995e8a20507ec961ec9a
+  checksum: 2c5f8534567726d9ff89e5b9faeef08dbbc5411043b9f9237570ee7f21ebc8b45579ed0387845d1e95ab576b2bf421ceb0f56419a825f01664eec09b167d73d2
   languageName: node
   linkType: hard
 
@@ -8715,7 +8715,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.8.2":
+"yaml@npm:^2.8.3":
   version: 2.8.3
   resolution: "yaml@npm:2.8.3"
   bin:
