@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commitizen", "npm:4.3.1"],\
             ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:14.0.0"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
-            ["date-fns", "npm:4.3.0"],\
+            ["date-fns", "npm:4.4.0"],\
             ["docdash", "npm:2.0.2"],\
             ["husky", "npm:9.1.7"],\
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
@@ -4012,10 +4012,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["date-fns", [\
-        ["npm:4.3.0", {\
-          "packageLocation": "./.yarn/cache/date-fns-npm-4.3.0-6a883e50e1-3e9a7e7674.zip/node_modules/date-fns/",\
+        ["npm:4.4.0", {\
+          "packageLocation": "./.yarn/cache/date-fns-npm-4.4.0-6a5186bdb1-9a25020573.zip/node_modules/date-fns/",\
           "packageDependencies": [\
-            ["date-fns", "npm:4.3.0"]\
+            ["date-fns", "npm:4.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7960,7 +7960,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commitizen", "npm:4.3.1"],\
             ["copy-webpack-plugin", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:14.0.0"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
-            ["date-fns", "npm:4.3.0"],\
+            ["date-fns", "npm:4.4.0"],\
             ["docdash", "npm:2.0.2"],\
             ["husky", "npm:9.1.7"],\
             ["jest", "virtual:b97a0f8bd0cb22b632f6daf4b1b3b67c871f41eb3f8ea24a4cc10dd39183fc22c8d3678bb89a06cb11f2c8deeedc931bbc98349b92973df198eb358d951b6087#npm:29.7.0"],\
