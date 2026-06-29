@@ -3507,12 +3507,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"envinfo@npm:^7.14.0":
-  version: 7.14.0
-  resolution: "envinfo@npm:7.14.0"
+"envinfo@npm:^7.21.0":
+  version: 7.21.0
+  resolution: "envinfo@npm:7.21.0"
   bin:
     envinfo: dist/cli.js
-  checksum: 137c1dd9a4d5781c4a6cdc6b695454ba3c4ba1829f73927198aa4122f11b35b59d7b2cb7e1ceea1364925a30278897548511d22f860c14253a33797d0bebd551
+  checksum: c9526266810a328396c387c0580d6fc10f6ce8464074ae6eaef6798e2a05b5800b480b2eaf739cf523e3bfb407baba2ef23ff8edebb76c2b8fa7fbac995b3b9b
   languageName: node
   linkType: hard
 
@@ -4554,6 +4554,18 @@ __metadata:
   bin:
     import-local-fixture: fixtures/cli.js
   checksum: bfcdb63b5e3c0e245e347f3107564035b128a414c4da1172a20dc67db2504e05ede4ac2eee1252359f78b0bfd7b19ef180aec427c2fce6493ae782d73a04cddd
+  languageName: node
+  linkType: hard
+
+"import-local@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "import-local@npm:3.2.0"
+  dependencies:
+    pkg-dir: ^4.2.0
+    resolve-cwd: ^3.0.0
+  bin:
+    import-local-fixture: fixtures/cli.js
+  checksum: 0b0b0b412b2521739fbb85eeed834a3c34de9bc67e670b3d0b86248fc460d990a7b116ad056c084b87a693ef73d1f17268d6a5be626bb43c998a8b1c8a230004
   languageName: node
   linkType: hard
 
@@ -6653,7 +6665,7 @@ __metadata:
     typescript: ^5.5.4
     uglifyjs-webpack-plugin: ^2.2.0
     webpack: ^5.108.0
-    webpack-cli: ^7.0.3
+    webpack-cli: ^7.1.0
     webpack-dev-server: ^5.2.5
     yargs: ^18.0.0
   languageName: unknown
@@ -8398,30 +8410,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-cli@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "webpack-cli@npm:7.0.3"
+"webpack-cli@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "webpack-cli@npm:7.1.0"
   dependencies:
     "@discoveryjs/json-ext": ^1.1.0
     commander: ^14.0.3
     cross-spawn: ^7.0.6
-    envinfo: ^7.14.0
-    import-local: ^3.0.2
+    envinfo: ^7.21.0
+    import-local: ^3.2.0
     interpret: ^3.1.1
     rechoir: ^0.8.0
     webpack-merge: ^6.0.1
   peerDependencies:
+    js-yaml: ^4.0.0 || ^5.0.0
+    json5: ^2.2.3
+    toml: ^3.0.0 || ^4.0.0
     webpack: ^5.101.0
     webpack-bundle-analyzer: ^4.0.0 || ^5.0.0
     webpack-dev-server: ^5.0.0
   peerDependenciesMeta:
+    js-yaml:
+      optional: true
+    json5:
+      optional: true
+    toml:
+      optional: true
     webpack-bundle-analyzer:
       optional: true
     webpack-dev-server:
       optional: true
   bin:
     webpack-cli: bin/cli.js
-  checksum: bf3f9ef77c305945a4033b7b08b52ac2fd3c0373aeb8e06abc158d4568e60ecc0f42ddf932fef42bbaf10835b1a34c61ef2a0920ab187822123b907d10b5bf5d
+  checksum: e93798c322f32d186d55c2568b7472ce7ee3461c56aca0ca8786cdc6da852af58ed4a530c30f0a1f1fd1ef50972f7e5a0241db1b12de1210fd0acebdaa7df6dd
   languageName: node
   linkType: hard
 
