@@ -6664,7 +6664,7 @@ __metadata:
     typedoc-webpack-plugin: ^1.1.4
     typescript: ^5.5.4
     uglifyjs-webpack-plugin: ^2.2.0
-    webpack: ^5.108.3
+    webpack: ^5.108.4
     webpack-cli: ^7.1.0
     webpack-dev-server: ^5.2.6
     yargs: ^18.0.0
@@ -8538,9 +8538,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.108.3":
-  version: 5.108.3
-  resolution: "webpack@npm:5.108.3"
+"webpack@npm:^5.108.4":
+  version: 5.108.4
+  resolution: "webpack@npm:5.108.4"
   dependencies:
     "@types/estree": ^1.0.8
     "@types/json-schema": ^7.0.15
@@ -8569,7 +8569,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 66a79984b79921aa15fe0246b89f38390da699ea1abc1f55521db62fa2e5d88a224a9300c63307ce7b3fdde51e3aba0f4dbcb1f2d9af83b7bd3993ab9da5f5a2
+  checksum: f58493ef1460a5b9575d62f7b36f160e972fbeec7f3e4caa3f03d8128953b9546bb8d10a30aab212f705c358b782b954f90482e2b6f72032ece957ee14bb875c
   languageName: node
   linkType: hard
 
