@@ -6765,7 +6765,7 @@ __metadata:
     typescript: ^5.5.4
     uglifyjs-webpack-plugin: ^2.2.0
     webpack: ^5.109.2
-    webpack-cli: ^7.2.1
+    webpack-cli: ^7.2.2
     webpack-dev-server: ^6.0.0
     yargs: ^18.1.0
   languageName: unknown
@@ -8470,9 +8470,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-cli@npm:^7.2.1":
-  version: 7.2.1
-  resolution: "webpack-cli@npm:7.2.1"
+"webpack-cli@npm:^7.2.2":
+  version: 7.2.2
+  resolution: "webpack-cli@npm:7.2.2"
   dependencies:
     "@discoveryjs/json-ext": ^1.1.0
     commander: ^14.0.3
@@ -8502,7 +8502,7 @@ __metadata:
       optional: true
   bin:
     webpack-cli: bin/cli.js
-  checksum: 2649aec59f7f46b46d72f33801821ec18c3359daf79ce10c9041806e8af5a6f953ec785ba054c42779fd71566301d25a5092e2f559556a629efab59ddca868c2
+  checksum: 6c48c3c5827cf9e375edb531311b71128344abf810139af70a34dfc85ac274baa1147aa692f01a42b3d5b3e0ca24f99e778a9b8fbfd73fe523d37413b403f0d9
   languageName: node
   linkType: hard
 
